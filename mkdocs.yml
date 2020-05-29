@@ -14,8 +14,8 @@ extra_css: [extra.css]
 markdown_extensions:
   - meta
 
-repo_name: 'ethhub-io/ethhub'
-repo_url: 'https://github.com/ethhub-io/ethhub'
+repo_name: 'ethhub-io/ethhub-zh'
+repo_url: 'https://github.com/ethhub-io/ethhub-zh'
 
 extra:
   social:
