@@ -4,28 +4,28 @@ title: What is Ethereum? - EthHub
 description: Ethereum is an open-source, permissionless blockchain-based distributed ledger providing infrastructure for distributed computing and economic activities.
 ---
 
-# What is Ethereum?
+# 以太坊是什么？
 
-## Summary
+## 概述
 
-Ethereum is an open-source, public, blockchain-based distributed ledger featuring smart contract (scripting) functionality. It enables developers to build blockchain applications with business logic that execute in a trustless environment, while leveraging the high availability of the Ethereum network.
+以太坊是一个基于区块链技术的、开源的、公共的分布式账本，具备智能合约（脚本）功能。以太坊赋力开发者使用业务逻辑来构建区块链应用，并且能够在一个去信任的环境中运行应用，同时还受益于以太坊网络的高可用性。
 
-## Why does it matter?
+## 以太坊的重要性？
 
-Because it opens the door to a global financial system where an Internet connection is all you need to access applications, products and services that operate in a trustless manner. Anyone can interact with the Ethereum network and participate in this digital economy, without the need for third parties and without the risk of censorship.
+以太坊叩开了全球化金融系统的大门，我们只需要联网便可以使用这些去信任化的应用、产品和服务。所有人都可以与以太坊网络交互并参与到数字经济中，而且无需任何第三方介入，也无需面临审查风险。
 
-## What are Smart Contracts and Decentralized Applications?
+## 智能合约和去中心化应用是什么？
 
-While the word "contract" brings to mind legal agreements; in Ethereum "smart contracts" are just pieces of code that run on the blockchain and are guaranteed to produce the same result for everyone who runs them. These can be used to create a wide range of Decentralized Applications (DApps) which can include games, digital collectibles, online-voting systems, financial products and many others.
+尽管“合约”一词首先使人联想到法律协议，但在以太坊的世界里，“智能合约”是一些在区块链上运行的代码，并且保障了参与运行合约的各方都获得相同的结果。这些智能合约还可以用来创建各种各样的去中心化应用（Decentralized Applications，简称DApps），包括游戏、数字化收藏品、线上投票系统和金融产品等等。
 
-The term "Smart Contract" was coined by Nick Szabo in the 90's. Szabo used the basic example of a vending machine to describe how real-world contractual obligations can be programmed into software and hardware systems. Everyone who puts the correct amount of coins into the machine can expect to receive a product in exchange. Similarly, on Ethereum, contracts can hold value and unlock it only if specific conditions are met.
+早在20世纪90年代，Nick Szabo就创造了“智能合约”这一概念。Szabo以自动售货机为例阐释了如何将现实生活中的合约义务编程到软件和硬件系统。只要我们在售货机中投入了正确金额，就能获得相应的产品。同样地，以太坊中的智能合约拥有价值，并且只有在满足特定条件时才会被激活。
 
-The scripting language used by Ethereum is Turing-complete, essentially meaning that the types of DApps users can design is limited only by their programming skills and creativity.
+以太坊使用的脚本语言是图灵完备的，也即是说，原则上用户可以创建任意种类的去中心化应用（DApps），局限之处仅在于个人的编程技能和创造力。
 
-## Resources
+## 相关资源
 
-* [Blockgeek - What is Ethereum](https://blockgeeks.com/guides/ethereum/)
-* [Cointelegraph - What is Ethereum. Guide for Beginners](https://cointelegraph.com/ethereum-for-beginners/what-is-ethereum)
-* [Bitfalls - What is Ethereum and how does it compare to something like Bitcoin?](https://bitfalls.com/2017/09/19/what-ethereum-compare-to-bitcoin/)
-* [Wikipedia - Ethereum](https://en.wikipedia.org/wiki/Ethereum)
-* [The Ethereum Whitepaper](https://github.com/ethereum/wiki/wiki/White-Paper)
+* [Blockgeek - 以太坊](https://blockgeeks.com/guides/ethereum/)
+* [Cointelegraph - 以太坊是什么：初学者指南](https://cointelegraph.com/ethereum-for-beginners/what-is-ethereum)
+* [Bitfall - 以太坊是什么？和比特币相比如何？](https://bitfalls.com/2017/09/19/what-ethereum-compare-to-bitcoin/)
+* [维基百科 - 以太坊](https://en.wikipedia.org/wiki/Ethereum)
+* [以太坊白皮书](https://github.com/ethereum/wiki/wiki/White-Paper)
