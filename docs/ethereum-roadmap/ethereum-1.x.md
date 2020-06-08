@@ -6,284 +6,283 @@ description: Ethereum 1.x is an effort to improve performance and storage of the
 
 # Ethereum 1.x
 
-## Summary
+## 概览
 
-Ethereum 1.x is a codename for a comprehensive set of upgrades to the Ethereum mainnet intended for near-term adoption. <br/>
-Ethereum 2.0 (Serenity) won't be fully rolled out for another 2-3 years with Phase 0 and Phase 1 due within 1-2 and Phase 2 due sometime in 2022. Ethereum 2.0 is being deployed as a separate blockchain so it does not supersede ETH 1.0 which means the chain needs to be sustainable for another 5-10 years.
+以太坊1.x是以太坊主网近期内将实行的一系列全面网络升级的代号。
 
-Eth1.x is a result of a group of Ethereum core developers and friends discussing the current challenges of Ethereum at Devcon IV and realising that they all share a similar view - that the Ethereum mainnet, if left unchanged, would become very hard or impossible to use due to severe performance degradation and increased storage requirements.
+以太坊2.0（Serenity，即宁静）不会在2-3年内全面上线，但阶段0和阶段1会在1-2年内实现，阶段2可能会在2022年推出。以太坊2.0将作为一条全新且独立于ETH 1.0的区块链进行部署，因此并不会接替ETH 1.0链，这也就意味着ETH 1.0链将继续存在5-10年。
 
-* Performance degradation mostly due to the large \(and increasing\) state size.
-* Increased storage requirements mostly due to keeping blocks, event logs \(receipts\), and state history \(currently prunable in major clients\).
-<br/>
+Eth1.x概念的出现，要追溯到2018年的第四届开发者大会（Devcon IV）。当时许多以太坊核心开发者和好友在谈到以太坊面临的挑战时，不约而同地表达了一个类似的观点：随着网络性能的严重下降以及存储需求的不断攀升，如果以太坊主网不进行升级，那么很可能会变得难以持续。
 
-The 1.x set of improvements will introduce major, breaking changes to the mainnet, while 2.0 (aka Serenity) undergoes prototyping and development in parallel. The plan for 1.x encompasses three primary goals: (1) mainnet scalability boost by increasing the tx/s throughput (achieved with client optimizations that will enable raising the block gas limit substantially); (2) ensure that operating a full node will be sustainable by reducing and capping the disk space requirements with “storage rent”; (3) improved developer experience with VM upgrades including eWASM.
+* 网络性能下降主要归因于状态（state）体积较大且还在不断增长。
+* 存储需求攀升主要是由于保留了区块、事件日志（收据）以及状态历史记录（当前可在主要客户端中删除）。
 
-## Pre-History of Ethereum 1.x
+1.x系列升级将为以太坊主网带来颠覆性的改变，而以太坊2.0（Serenity，即宁静）会同步进行原型设计和开发。1.x计划包含三个主要目标：\(1\) 通过提高每秒交易的吞吐量来提升主网扩容性（可通过优化客户端，大幅提升区块gas限制实现）；\(2\) 通过“存储租金”限制和减少磁盘空间需求，从而确保全节点的可持续运行；\(3\) 通过优化虚拟机 \(VM\) 提升开发者体验，其中包括eWASM的实现。
 
-#### October 2017, Devcon3 in Cancun
+## 以太坊1.x前序历史
 
-Vitalik Buterin presents ["Modest proposal for Ethereum 2.0"](https://www.youtube.com/watch?v=hAhUfCjjkXc), suggesting that Layer 1 of Ethereum 1.0 should stay “safe and conservative”, and most of the innovation go into Layer 2 and into shards.
+#### 第三届Devcon 2017年10月，坎昆
 
-#### May 2018, EDCON in Toronto
+Vitalik Buterin提出 ["针对以太坊2.0的谨慎建议"](https://www.youtube.com/watch?v=hAhUfCjjkXc), 建议以太坊1.0的第1层（layer 1）应保持“安全且保守”，大部分创新都应在第2层和分片上施行。
 
-Vitalik Buterin gives a talk [“So you want to become Casper validator?”](https://www.youtube.com/watch?v=VqOlOMAqC08), signaling that Casper FFG validators may be running on laptops and rollout is getting close.
+#### EDCON 2018年5月，多伦多
 
-#### June 2018
+Vitalik Buterin发表演讲“ [想成为Casper验证者吗](https://www.youtube.com/watch?v=VqOlOMAqC08)”，表示Casper FFG验证者可以在笔记本电脑中运行，并且临近推行。
 
-Casper FFG research is merged with sharding due to challenges of implementing Casper FFG as a contract, and due to large overlap with Sharding research, as discussed at the [Core Dev Meeting 40](https://youtu.be/8-AZys80RrU?t=1819).
+#### 2018年6月
 
-#### October-November 2018, Devcon IV in Prague
+在[第40次核心开发者会议](https://youtu.be/8-AZys80RrU?t=1819)中，由于将Casper FFG作为合约实现具有一定挑战性，且与分片相关研究大量重叠，Casper FFG与分片研究进行了合并。
 
-It becomes apparent that Serenity \(full Casper + Sharding\) is not going to functionally supersede Ethereum 1.0 for another 3-5 years.
+#### 第四届Devcon 2018年10月-11月，布拉格
 
-## Main Objectives
+明确Serenity（完整的Casper+分片）在3-5年内不会在功能上取代以太坊1.0。
 
-* Develop, formalize, and implement set of measures, deployable on the Ethereum 1.0 mainnet, within the next 2 years, to ensure that the chain stays viable and usable. That mainly means curbing the state growth or limiting the state size.
-* Emphasize focus on these measures and de-emphasize introduction of specific “features”. This is one of the places where eWASM engine comes in. Current computational pre-compiles are seen as features requiring case-by-case work. Introduction of eWASM engine would first enable “pre-compile” factory, where more pre-compiles are introduced faster. Later it would enable any contracts written in eWASM, obviating the need for pre-compiles altogether.
+## 主要目标
+
+* 开发、规范并实现一系列措施，使其在两年内可以部署在以太坊1.0主网上，以确保1.0链持续存在且可用。主要包括抑制状态增长或是限制状态大小。
+* 重点放在这些措施本身，而不再强调引入特定的“功能”。而这就是我们需要eWASM的原因之一。目前的计算预编译功能需要逐例处理。引入eWASM将首先启用“预编译”工厂，引入预编译的速度和数量都得到了提升。之后，任何合约都将能够在eWASM中进行编写，从而完全不需要进行预编译。
 
 
-## Working groups
-* State rent (now called as state fees because it might not be just rent)
+## 工作方向
+* 状态租金（鉴于可能不只是租金，目前称作状态费用）
 * eWASM
-* Storage pruning
-* Simulation and Emulation
+* 状态精简
+* 模拟仿真
 
-### State Rent
+### 状态租金
 
-#### Proposal framework
+#### 提案框架
 
-Since State rent is a potentially higher impact change \(and therefore more controversial, possibly unpopular\) than any other changes within Ethereum 1.x, it requires a clear logical framework for designing, evaluating, and comparing proposals. This framework attempts to ensure, as much as possible, that the change plan eventually chosen is likely close to the best available. It defines the path of reasoning from “What is the problem \(what happens if we do nothing\)?” to “How exactly we are doing it”. [Current location of the proposal framework document](https://github.com/ledgerwatch/eth_state/blob/master/State_size_growth_management.pdf) \(Work in progress\)
+由于状态租金与以太坊1.x阶段内的其他变动相比，可能会带来更大的影响（所以状态租金备受争议，甚至不受欢迎），因此在设计、对比并评估相关提案时要保持清晰的逻辑框架。这个框架旨在尽可能保证最终的更改方案是最优的。其遵循从“要解决的问题是什么（如果保持现状会怎样）”到“我们具体应该怎么应对”的逻辑路径。[此处是目前的提案框架文档](https://github.com/ledgerwatch/eth_state/blob/master/State_size_growth_management.pdf)（进行中）。
 
-Alexey explains the idea of state rent - "to charge people not once when they start using storage and then paying them back a certain amount if they free it up again, but actually charging people by the day or by the block based on the storage that they're using, and if they decide that they don’t need these things anymore they can just withdraw their Ether or they just leave it and then it will be garbage collected by the rent".
+Alexey对于状态租金的概念作出了如下解释：“（状态租金）并不是开始存储时一次性向用户收取费用，然后在其释放所占用的存储空间时退还一定金额，而是根据用户所占用的存储按天或按区块收取费用，如果他们不再需要进行存储了，可以提出ETH或是置之不顾，若是后者，其ETH将被回收。”
 
-#### Reasoning questions
+#### 常见问题
 
-* Why is state a valuable resource and to whom? \(can this value be replicated\)
-* Why state size needs to be managed? \(effect on system performance + possible partial mitigations\)
-* How can state size be managed? \(feedforward vs feedback control\)
-* What metrics need to be regulated? \(state size, state growth, or both\)
-* Do metrics need to be in-state or off-state?
-* What parameters \(control inputs\) do we use? \(cost of state expansion, charge per size unit per block\)
-* Can controlled system weaken or evade control? \(dark rent, miner rebates\)
-* How can we get active contracts that are using lots of storage to pay a rent that more accurately represents the cost of storing that data permanently on-chain over a period of time? \(Linear cross-contract storage could be a solution here\)
-* How can we clear the state of abandoned contracts that are not being used anymore? \(This problem is not addressed in any such proposal as abandoned contracts represent only 6% of the state\)
-* How about keeping rent simple and maximally effective at the protocol level and completely deleting anything which runs out of funds? \(Bad Idea, Users forget about some application they are involved in all the time\)
-* Moving portions of the smart contracts data off chain? \(A subprotocol is needed for the delivery\)
+* 为什么将状态看作是宝贵资源？于谁而言有价值？（其价值能被复制吗）
+* 为什么要限制状态大小？（提升系统性能 + 可能有一定程度的缓解作用）
+* 如何管理状态大小？（前馈 vs. 反馈控制）
+* 需要管理哪些指标？（状态大小、状态增长或是两者同时）
+* 指标本身有无状态？
+* 我们使用什么参数（控制输入）？（状态扩张的成本，按每个区块每个大小单位收费）
+* 受控系统能削弱或是逃避控制吗？（潜在租金，矿工返利）
+* 我们如何获得占用大量存储的有效合约来支付租金，而租金更准确地代表了一段时间内将数据永久存储在链上的成本？ （线性跨合约存储可能是一种解决方案）
+* 如何清理废弃合约中不再使用的状态？（由于废弃合约仅占状态的6%，因此还没有提案讨论过这个问题）
+* 如何在协议层面上保持简单且效用最大化的费用，并完全删除耗费大量费用的信息？（这不是一个好主意，用户总是会遗忘自己参与其中的应用）
+* 能否将智能合约的某些数据移至链下？（这种做法需要一个子协议）
 
+*“假如你现在有一个占用存储的智能合约，且必须要有人为其支付费用，那如果没有人进行支付又会怎么样？”*
 
-*"Say you have a smart contract now and it uses storage so it has to pay rent. So it has to have funds or someone needs to pay funds on behalf of it. So what happens if no one pays?"*
+在目前既有的三个提案中，当智能合约的余额与状态费用是相互独立的，如果合约的两个余额都消耗完毕，那么会发生驱逐情况。 <br/>
+在现有的提案中，合约驱逐不会自动进行，必须要有人“戳”一下合约。简单来说，必须有人创建一个交易，并以某种方式访问该合约。
 
-Under all three of the current proposals, when the smart contract exhausts its balance and the rent balance, they are considered two separate things. So when both of these balances are empty, an eviction happens. <br/>
-Eviction, under the current proposals, doesn’t just happen automatically - somebody actually has to 'poke' the contract. Poking means that somebody has to create a transaction which touches it to access it in some way.<br/>
-For non contracts, eviction means just removing from the state as it doesn't have any information at all but for contracts, there's storage, so eviction doesn't completely remove it from a state but it leaves a so-called stub which is essentially the commitment to the entire state of the contract before the eviction, and this stub, unfortunately has an effect that it does not completely remove it from the state so it has to still dangle there, but this stub is what allows us to restore it later on.
+对于非合约来说，驱逐就只是意味着从状态中移除，因为其中并不包含任何信息。而合约不同，合约会占用存储，因此合约的驱逐不能直接从状态中完全移除，而是会产生一个“存根”\(stub\)，其本质上是保留驱逐前合约的整个状态。存根带来的一个影响是，不能将合约在状态中完全删除，因此仍然会处于悬挂状态，但是存根使得我们能够恢复合约。
 
-Let's take an **example**, "if you had a multisig wallet with lots of tokens in it and then you've forgotten to pay the rent, the multisig is "gone" but you would still be able to use the recovery mechanism to rebuild the storage of this contract in another contract and simply use a special code to restore it from the stub - then the contract comes "back to life". You can also top up the rent and then keep using the contract or you can move the things elsewhere." <br/>
-The stub is expected to be a 32 byte hash which is a commitment to what the contract looked like before it was evicted.
+我们举个**例子**，“假如你有一个多签钱包，里面有许多代币，但是你忘记支付存储费用，你的钱包就会“消失”，但你仍然可以通过恢复机制另起一个合约来重建合约存储。只需要借助一个简单的代码将其从存根中恢复，你的合约就能“死而复生”。另外，你也可以直接充值状态费用从而继续使用合约，或者你也可以将合约中的数据移至别处。” <br/>
+存根将是一串32字节的哈希值，保留了合约被驱逐之前的内容。
 
-*How is this different from stateless contracts?*
+*与无状态合约有何区别？*
 
-The difference is that in stateless contracts we assume that when the contract is represented as a stub it’s still accessible by the normal operations. In this proposal, when the contract is in hibernation state (ie when it’s a stub) it’s not accessible by anything. It’s basically invisible to the Ethereum Virtual Machine\([EVM](https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-(EVM)-Awesome-List)\) with the exception of this special opcode, which it’s restored to, and only that opcode can see that stub - nothing else can.
+区别在于，无状态合约即使以存根形式存在，仍然可以通过正常操作进行访问。而在状态费用提案中，当合约处于休眠状态（即以存根形式存在），我们无法对其进行访问。如此可以说合约在以太坊虚拟机（[EVM](https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-%28EVM%29-Awesome-List)）中是不可见的，只有恢复合约的特殊操作码才能辨识出存根。
 
-*Is this the best solution?*
+*这是否是最好的解决方案？*
 
-This is not a perfect solution as if we find that there are lots of little contracts having the hash stubs and then the state is still not small enough.
+假使有很多小型合约只保留了哈希存根，但状态大小仍然高居不下，那么我们就可以说这并不是完美的解决方案。 
 
-Watch the whole [talk](https://epicenter.tv/episode/274/) where Alexey explains state rent and more about Eth 1.x.
+点击[此处](https://epicenter.tv/episode/274/)观看Alexey解释状态费用及Eth1.x的完整视频。
 
-#### Current proposals
-There are currently three proposals being worked upon: <br/> 
-* Introduce rent on all accounts \(contracts and non-contracts\), existing and newly created ones, with the ability to restore evicted contracts. [Current location](https://github.com/ledgerwatch/eth_state/blob/master/State_rent.pdf)
-* Introduce fund lock-up when state is expanded \(creation of accounts, adding store items\), which is partially released when the state is cleared. Apply rent only on the pre-existing state. [Current location](https://github.com/ledgerwatch/eth_state/blob/master/State_Rent_2.pdf)
-* Increase the cost of state expansion in “short term”, to enable block gas limit increase before state rent is implemented
+#### 既有提案
+目前针对状态费用存在三个提案： <br/> 
+* 对所有账户引进费用机制，无论是合约账户或是非合约账户，既有账户或是新建账户，且都能够恢复被驱逐的合约。[当前提案](https://github.com/ledgerwatch/eth_state/blob/master/State_rent.pdf)
+* 在状态扩展时（创建账户，增加存储项目）进行费用锁定，在状态清除后及释放一定金额。只针对先前存在的状态进行收费。[当前提案](https://github.com/ledgerwatch/eth_state/blob/master/State_Rent_2.pdf)
+* 在“短期”内提升状态扩张的成本，以便在实现状态费用之前提高区块gas上限。
 
-#### Challenges inherent to most proposals
+#### 固有挑战
 
-* How will existing dApps be affected? Will they become too expensive/cumbersome to use? Will they need to be optimized/rewritten completely?
-* Denomination of the extra state expansion charge or rent - should it be priced in gas, ETH, and how should be the price be determined \(feedback loop on the state size?\). Will volatility of ETH price affect those charges too much? Will miners help users evade charges?
+* 现有的dApp将受到什么影响？是否会由于太过昂贵/繁琐而无法使用？是否需要优化/完全重写？
+* 状态额外扩张的费用或租金的定价──应该gas还是ETH来定价？如何确定价格？（状态规模的反馈周期？） ETH价格的波动会对费用产生多大影响？矿工会帮助用户逃避费用吗？
 
-#### Classes of contracts and impacts
+#### 合约种类及影响
 
-Part of the state rent research is to identify main classes of contracts that are likely to be affected by the changes in the protocol, and provide guidelines on what they can do about it. Likely important classes:
+部分状态费用研究的目的在于识别哪些合约种类易受协议变更的影响，并且为其提供解决方案。可能受影响的重要合约种类：
 
-* ERC20 token contracts and applications managing them \(DAI, Augur\)
-* On-chain order books \(DEXs\)
-* Ethereum Name Service [ENS](https://ens.domains/)
-* Non-fungible token contracts
-* Multi-signature wallets
-* Gaming contracts
-* Gambling contracts
+* ERC20代币合约及其管理合约（DAI、Augur）
+* 链上买卖合约（DEXs）
+* 以太坊域名服务 [ENS](https://ens.domains/)
+* 非同质代币（NFT）合约
+* 多签钱包
+* 游戏合约
+* 博彩合约
 
-#### Resources
+#### 相关资源
 
-* [State Fees Proposal](https://ethereum-magicians.org/t/state-rent-proposal-version-2-rushed/2494)
-* [Alexey explains State Fees](https://epicenter.tv/episode/274/)
+* [状态费用提案](https://ethereum-magicians.org/t/state-rent-proposal-version-2-rushed/2494)
+* [Alexey对状态费用的阐释](https://epicenter.tv/episode/274/)
 
 ### eWASM
 
-Enhancement to the Ethereum protocol is currently hindered by the inflexibility of the Ethereum Virtual Machine\([EVM](https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-(EVM)-Awesome-List)\) architecture. The method of extending the execution layer has been the introduction of special “precompile” contracts. The use of WebAssembly as a virtual machine specification for executing high-performance “precompile” contracts promises to streamline the process of introducing such contracts.
+由于当前的以太坊虚拟机（[EVM](https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-%28EVM%29-Awesome-List)）架构缺乏灵活性，对以太坊协议的强化有一定限制性。扩展执行层的方法是引入特殊的“预编译”合约。通过使用WebAssembly作为虚拟机规范，以执行高性能的“预编译”合约，有望简化引入此类合约的过程。
 
-eWASM is a subset of Wasm, Wasm has a couple of features which are non-deterministic, we need to eliminate them by validating contract while deploying. If contract uses non-deterministic features then it's rejected.
+eWASM作为Wasm的衍生，可以通过在部署时对合约进行验证来克服Wasm的一些非确定性功能。如果合约使用了非确定性功能，则会被拒绝。
 
-The current proposal is to use an even smaller subset of eWASM \(only allowing precompiles to be written as eWASM\).
+当前的提案建议使用更为狭义的eWASM（仅允许将预编译编写为eWASM）。
 
-#### Main unresolved questions
+#### 主要待解决问题
 
-* Gas metering
-* Memory allocation
-* Interaction with the rest of EVM state \(e.g. contract storage, balances\)
-* Interpreter/compiler guarantees on compilation time and runtime
+* Gas计量
+* 内存配置
+* 内存配置
+* 解释器/编译器如何保障编译时及运行时
 
-#### Gas metering
+#### Gas计量
 
-Two main approaches:
+两种主要方式：
 
-* Injection. Wasm bytecode gets pre-processed. An extra register is added to serve as a gas counter. It gets incremented at certain points \(jumps, calls\) and out-of-gas check is performed. Pro: generic. Con: performance overhead.
-* Automatic upper bound estimation. Static analysis is performed on the bytecode, and, for some subset of codes, upper bound of executed instructions \(virtual gas\) can be calculated. Pro: no performance overhead. Con: only subset of codes
+* 注入。预处理Wasm字节码，额外添加一个寄存器用以gas计量。在进行某些操作时（跳转、调用）递增，并检查gas是否耗尽。优点：通用性；缺点：性能开销。
+* 自动估算上限。对字节码执行静态分析，对于某些代码子集，可以计算已执行指令（虚拟gas）的上限。优点：无性能开销；缺点：仅适用于代码子集。
 
-Current approach for the 1st phase \(pre-compiles\) is upper-bound based.
+目前第一阶段（预编译）采用的方式是基于gas上限。
 
-#### Memory allocation
+#### 内存配置
 
-Wasm semantics dictates that its execution has a linear memory \(only one in the current version of the spec\) that can be grown on demand. Will that linear memory be allocated every time the engine is called and then torn down at the end of the execution? If yes, how much more efficient is this compared to the current EVM model \(which does this allocation and tearing down at each CALL opcode\).
+Wasm语义决定了其执行具有线性内存（在当前规范版本中只有一个），可以按需增长。线性内存是否会在每次调用引擎时进行分配，然后在执行结束时回收？如果是这样的话，则与当前的EVM模型相比（每个CALL操作码都会进行分配和回收），效率更高。
 
-#### Interaction with the rest of EVM state
+#### 与其他EVM状态的交互（例如合约存储、余额）
 
-This was proposed via external functions, for example \(name made up\):
+这是通过外部函数提出的，例如（函数名为虚构）：
 
 `function_SLOAD(storage_index: uint256)`
 
-The alternative approach is not to have eWASM code access EVM state, but only exchange input/output when called. This, of course, makes maintaining large persistent data structures difficult.
+另一种方式是不允许eWASM代码访问EVM状态，而仅在调用时交换输入/输出。当然，这并不适合维护大型的持久数据结构。
 
-#### Interpreter/compiler guarantees
+#### 解释器/编译器保障
 
-Initially, this problem was brought up in the context of JITs \(Just In Time\) compilers. JIT compilers were one of the reasons why WebAssembly was a big performance improvement over JavaScript.
+起初，这个问题是在JITs（Just In Time，即时编译）编译器语境中被提及的。JIT编译器是WebAssembly大大提升了JavaScript性能的原因之一。
 
-JIT compilers might be problematic in an adversarial environment because it is usually possible to find a program that takes an unusually long time to compile, and algorithms that decide what to compile “just in time” can be targeted too.
+在对抗性环境中，JIT编译器可能会出现问题，因为经常会出现编译耗时异常之久的程序，而且决定哪些内容要“即时编译”的算法也可能被攻击。
 
-AOT \(Ahead of Time\) compilers can be used for Core Dev-controlled pre-compiles \(Phase 1\). For Phase 2, the plan was to initially use very straightforward interpreters, and then develop AOT compilers with necessary guarantees. The idea of first introducing interpreters is to make sure eWASM is there, giving people more motivation to work on the compilers \(which is harder than interpreter\)
+AOT（Ahead of Time，预先编译）编译器能够用于由核心开发者控制的预编译（阶段1）。阶段2的计划是首先使用简单解释器，继而开发AOT编译器，以提供必要保障。之所以首先引入解释器的原因是要确保eWASM可使用，使参与者更有动力围绕编译器展开工作（这比解释器更难）。
 
-#### Resources
+#### 相关资源
 
-[eWASM Proposal](https://ethereum-magicians.org/t/eWASM-working-group-proposal-for-eth-1-x/2033) <br/>
-[eWASM Design](https://github.com/eWASM/design)
+[eWASM提案](https://ethereum-magicians.org/t/eWASM-working-group-proposal-for-eth-1-x/2033) <br/>
+[eWASM设计](https://github.com/eWASM/design)
 
-### Storage Pruning
+### 状态精简
 
-Ethereum 1.0 has a storage scaling issue. Yes, the rate of growth itself is implicitly limited by the block gas limit, but there is no limit on the total amount of data accumulated over time. <br/>
-Also known as Chain Pruning, this group is not related to state directly instead it is concerned with the growing size of logs, blocks, data, etc. <br/>
-"If Ethereum were to grow at its current rate, 91 GB would be added per year to storage", according to the core team.<br/>
-Storage Pruning is necessary and seeks to place a cap on Ethereum's data storage growth. Part of the proposal includes the deletion of historical blocks, logs, and indexes. 
+以太坊1.0存在扩容问题。增长率本身隐隐受到区块gas上限的限制，但数据的累积总量不受限制。 <br/>
+状态精简也称为链精简，这项工作并不直接与状态本身相关联，而是限制日志、区块以及数据等信息的增长。 <br/>
+按照核心团队的说法：“如果以太坊按照目前的速度增长，那么每年将增加91 GB的存储量"。 <br/>
+精简存储是有必要的，目的是限制以太坊的数据存储增长。提议的一部分包括删除历史区块、日志和索引。 
 
-#### The questions to be answered are:
+#### 待解决问题：
 
-* What do we absolutely need to keep to comply with the Ethereum protocol?
-* Do we always need to keep all the blocks? \(maybe not, if we use backward sync, for example\)
-* Do we need to keep receipts, or just logs, how much \(in Gigabytes\), or for how long?
-* Do we need to always download the entire header chain or can we compress it \(with STARK proofs for example\)?
-* Can we improve snapshot sync procedures \(fast sync, warp sync\) so that they prevent invalid state transitions \(with Validity Proofs, for example\)? 
+* 我们必须要保留哪些部分才能与以太坊协议保持一致？
+* 是否需要一直保留所有区块？（也许不需要，例如我们可以采取向后同步方式）
+* 是否需要保留收据或是日志？保留的话需要保存多少（多少GB）？保存多久？
+* 是否总是需要下载整个头链？是否可以进行压缩（或许可以使用STARK证明）？
+* 能否通过优化快照同步流程（快速同步、压缩同步）防止无效的状态转换（或许可以使用有效证明）？
 
-#### How to handle removal of history
+####  删除历史信息面临的挑战
 
-The first challenge to solve with regard to pruning historical chain segments is to ensure that we can prove the past even though we've deleted the past. There are two possible approaches for this:
+对历史区块链进行精简所要面临的第一个挑战就是，即使我们删除了历史信息，也要依然能够对其进行证明。以下是两种潜在解决方案：
 
-##### Maintain a Merkle (or other cryptographic) proof of deleted chain segments 
+##### 保留已删除区块链部分的默克尔证明（或其他加密证明形式）
 
-Light clients work exactly like this and that's why are able to sync in a couple of minutes. Instead of having to go through all the headers from genesis, light clients are hard coded (or fed from the config file) a trusted checkpoint, which they start syncing from. This mechanism has two issues however:
+轻客户端就是以这种方式运行，因此我们能够在短短几分钟内完成同步。轻客户端无需遍历从创世区块到链头的每个区块头，而是通过一个可靠检查点进行硬编码（或是从配置文件中获取），并从该检查点开始同步。然而，这种机制也存在两个问题：
 
-* To keep sync fast, we constantly have to update the hard coded snapshots or the config file. This works for mainnet with an active maintenance schedule, but does not scale for private Ethereum networks.
-* If no release is made, sync currently takes longer. If however the full nodes would start deleting old headers themselves, old checkpoints would become useless, forcing devs to constantly issue new releases and users to constantly pull new releases. It just doesn't scale.
+* 为了保证快速同步，必须不断更新硬编码快照或配置文件。这种方式适用于主网，因其会进行常规维护，但并不适用于私有以太坊网络。
+* 如果没有新版本发布，同步所耗费的时间会越来越长。而且如果全节点开始自行删除历史链头，那么历史检查点将失去效用，这迫使开发者要不断发布新版本，而用户也要不断拉取新版本。这对于扩容性来说毫无帮助。
 
-##### Maintain the header chain indefinitely
+##### 无限期维护头链
 
-It solve all of the issues that the Merkle proof mechanism has, you can always fast sync based on the header chain with only the genesis. The downside is that opposed to the Merkle proof, which is 32 bytes for arbitrary history, keeping the headers available indefinitely means indefinite chain growth.
+这解决了Merkle证明机制的所有问题，我们始终可以仅基于头链和创世区块就进行快速同步。其弊端在于，与默尔克证明相反（默克尔证明是32个字节的任意历史记录），使得区块头无限期可用也就意味着头链的无限增长。
 
+#### 垃圾回收
 
-#### Garbage Collection
+如果我们就N个月/区块的保留策略达成一致，那么当区块链增长时，每个客户端都会删除N区块头之前的区块体和收据。然而这也会对RPC API造成影响。对此我们需要引入“虚拟创世块”（或许有更好的名字）概念，以定义APIs停止返回数据（或返回其停止维护数据）的历史点。
 
-If we agree on an N month/block retention policy, whenever the chain progresses, each client would delete bodies and receipts older than HEAD-N. This has an implication on the RPC APIs too however. We need to introduce the concept of a "virtual genesis block" (open for better names) which define the point of history before which the APIs cannot return data (or return that they don't maintain it any more).
+#### 区块/收据存档
 
-#### Block/Receipt Archives
+如何对历史链部分进行存档以便在之后的重建中可以重新启用，这是提案中最具挑战性的部分。因此，我们需要考虑在何处放置这些存档（内部或外部）：
 
-Archiving historical chain segments so they remain available for later reconstruction if need be is the hardest part of this proposal. So where to store these archives, internally or externally:
+* 协议外存储意味着将数据文件托管在传统外部服务器中，并根据我们的安全需求进行镜像和复制：FTP、S3、CDN等等。这些文件可以由主要参与者进行存档（以太坊基金会、Consensys、Parity Technologies、Internet Archive等等）。可以将这些文件的访问方式简化为Web请求。
+* 协议内存储意味着将数据文件托管在以太坊网络内部的某些节点处：Swarm/devp2p、IPFS/libp2p、BitTorrent等。存档仍将由主要参与者运行，但任何人都有机会参与运行存档，因此这种方式更贴近去中心化的精神。
 
-* Extra-protocol storage means hosting the data files on classical external servers, mirrored and replicated according to our security needs: FTP, S3, CDNs, etc. These could be archived by major players (Ethereum Foundation, Consensys, Parity Technologies, Internet Archive, etc). Access to these could boil down to dumb web requests.
+以太坊秉承着去中心化的精神，我们只会选择协议内的方案。但其实还有许多其他方式使得我们可以对存档进行去中心化存储。
 
-* Intra-protocol storage means hosting the data files within some of the nodes in the Ethereum network itself: Swarm/devp2p, IPFS/libp2p, BitTorrent, etc. The archives would still be run by the same major players, but running an archive would be approachable to anyone, thus closer to the ethos of decentralization.
-
-Since the whole point of Ethereum is decentralization, the only option we have is intra-protocol. However there are many methods by which we can store the archives in a decentralized way. Some of them are listed here:
-
-* [Swarm](https://swarm.ethereum.org/) \(but not production ready\)
-* [IPFS](https://ipfs.io/) \(accessing is easy, hosting is hard\)
+* [Swarm](https://swarm.ethereum.org/) （暂未投入使用）
+* [IPFS](https://ipfs.io/) （易于访问，难于托管）
 * [BitTorrent](https://www.bittorrent.com/)
 * LES/PIP
 
-**Broken Invariants**
+**打破惯例**
 
-Pruning historical chain segments breaks a few important invariants within the Ethereum ecosystem:
+精简历史链会打破以太坊生态内部的一些重要惯例：
 
-* DApps will no longer be able to access events past the retention policy.
-* Nodes will have no way of knowing if a transaction was already deleted, or never existed in the first place.
-* It will be harder for nodes to do a full sync, a full sync on Ethereum mainnet with current Geth takes about 5 days, 4 days out of which is the last 2.7M blocks. If we bump the transaction throughput to 10x, apart from very special users, nobody will be able to do a full sync, nor will want to really.
+* DApps将不能再访问保留期限外的事件
+* 节点将无法获知交易是否已删除或者是否从一开始就不存在
+* 节点会更难进行完整同步，目前在以太坊主网上使用Geth进行完整同步大约需要5天，其中最后270万个区块需要4天。如果我们将交易吞吐量提高到10倍，那么除了特殊用户之外，将没有人能够完成完整同步，也不会有人愿意进行完整同步。
 
-#### Resources
+#### 相关资源
 
-[Pruning Proposal](https://gist.github.com/karalabe/60be7bef184c8ec286fc7ee2b35b0b5b)
+[精简提案](https://gist.github.com/karalabe/60be7bef184c8ec286fc7ee2b35b0b5b)
 
-### Simulation and Emulation
 
-What are the tools that we can use to support the other groups like State Rent and the chain pruning group, to run some test scenarios and try to predict what problems that we’re going to face in the future?
+### 模拟仿真
 
-Simulation and Emulation group produces data for making projections, benchmarks, and parameter calibrations for other groups.
+要对以上提及的工作领域（状态费用、状态精简）进行支持、运行测试方案并且对我们将来可能面临的难题进行预测，我们能够借助哪些工具？
 
-The working group is tasked with developing three setups:
-* A simulation framework that, when a dataset is entered, produces an output to estimate properties of proposed changes (such as uncle rate reduction and gas limit increases). Currently [Wittgenstein](https://github.com/ConsenSys/wittgenstein) is suggested.
-* An emulation framework that alters environment conditions to test properties of launched changes
-* A testnet that launches these changes together on the same network
+模拟仿真能够为其他工作方向提供数据，以便进行预测、基准测试和参数校准。
 
-**Simulation** handles models of the software agents \(in our case Ethereum client software instances\), coarse enough to be performant, and fine enough to capture the important facets of the agents. <br/>
+模拟仿真工作有三项开发任务：
+* 模拟框架，当输入数据集时，该框架将生成输出，以预估被提议更新的属性（例如叔块率降低和gas上限增长）。目前建议使用[Wittgenstein](https://github.com/ConsenSys/wittgenstein)模拟器
+* 仿真框架，可以更改环境条件，以测试已启用更新的属性
+* 测试网，能够同一网络上一并启用这些更新
 
-**Emulation** handles the actual software agents \(in our case the actual implementations of Ethereum like geth and parity\), placed into the virtual environments with lots of freedom to change parameters of virtual machines and the network connecting them.
+**模拟**工作负责处理软件代理的模型（当前语境为以太坊客户端软件实例），模型需要做到能够良好运行、能够捕获代理的重要方面。 <br/>
 
-Potential questions that simulation may be able to answer:
+**仿真**工作主要负责处理实际的软件代理（当前语境为实际的以太坊客户端实现，例如geth和parity），将其置于虚拟环境中，可以自由更改虚拟机以及网络参数。
 
-* Will uncle rate become much less of an indicator of the network congestion if most of the Ethereum nodes propagate blocks straight after verifying Proof Of Work \(instead of fully processing the block as they used to do\)?
+通过模拟或许可以得到解答的问题：
 
-Potential questions that emulations may be able to answer:
+* 如果大多数以太坊节点在验证工作量证明之后直接广播区块（而不是像之前一样对区块进行完整处理），叔块率是否不再能代表网络的拥堵情况？
 
-* What is the function that describes the relationship between the rate of success for snapshot synchronizations \(fast sync, warp sync\) and things like prevailing bandwidth and state history pruning threshold?
+通过仿真或许可以得到解答的问题：
 
-Developers are in the process of collecting datasets for simulation and finalizing parameters for simulation \(one of which might be uncle rate\).
+* 快照同步（快速同步、压缩同步）成功率与主要带宽和状态历史精简阈值这类事物之间的关系应该用哪个函数进行描述？
 
-**Properties to test**
+开发者正在收集用于仿真的数据集，并对用于仿真的参数进行最终确定（其中之一可能是叔块率）。
 
-* Block propagation, to reduce uncle rate
-* If yes, raise gas block limit
-* If yes, consider increasing cost of storage wrt compute
-* Determining what the next bottleneck is
- (a) Assume compute time is reduced
- (b) Assume bandwidth limit results in many uncles
+**需测试的属性**
 
-**Dataset Preparation**
+* 区块广播，能否降低叔块率
+* 如果可以，提升区块gas上限
+* 如果可以，考虑提高存储成本和计算成本
+* 确定下一个瓶颈是什么
+ (a) 假设计算时间缩短
+ (b) 假设由于带宽限制出现许多叔块
 
-Datasets are being collected [here](https://drive.google.com/drive/folders/1cJRMKxhGBzXMxNBcPi011Mg5e2Dw1JU1) from various sources like [WhiteBlock](https://whiteblock.io/), [Etherscan](https://etherscan.io/) etc.
+**准备数据集**
 
-#### Resources
+[这里](https://drive.google.com/drive/folders/1cJRMKxhGBzXMxNBcPi011Mg5e2Dw1JU1)从多种来源收集数据集，例如[WhiteBlock](https://whiteblock.io/), [Etherscan](https://etherscan.io/)等等。
 
-[Simulation Proposal](https://docs.google.com/document/d/1pIW6Uac5Qanx_L5Y_G4Ucrx_gjITkBgzQKmlBQbW3Cg/edit)
+#### 相关资源
 
-## Deliverables
+[模拟提案](https://docs.google.com/document/d/1pIW6Uac5Qanx_L5Y_G4Ucrx_gjITkBgzQKmlBQbW3Cg/edit)
 
-#### Measures requiring hard-forks:
+## 交付内容
 
-* State rent \(or state growth limiting\)
+#### 需要实行硬分叉的措施：
+
+* 状态费用（或限制状态增长）
 * eWASM
 
-#### Measures likely not requiring hard-forks, but requiring cross client code coordination on the network protocol:
+#### 可能无需实行硬分叉，但是需要在网络协议层面进行跨客户端协作的措施：
 
-* Storage pruning
+* 状态精简
 
-## Resources
+## 相关资源
 * [Ethereum 1x Definition (part 1)](https://ledgerwatch.github.io/Ethereum_1x_Definition_part_1)
 * [Ethereum 1x Definition (part 2)](https://ledgerwatch.github.io/Ethereum_1x_Definition_part_2)
 * [Ethereum 1x Definition (part 3)](https://ledgerwatch.github.io/Ethereum_1x_Definition_part_3)
