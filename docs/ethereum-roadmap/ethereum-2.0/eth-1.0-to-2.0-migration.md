@@ -1,14 +1,14 @@
 ---
-title: Migration from Ethereum 1.0 to Ethereum 2.0 - EthHub
+title: 从以太坊1.0迁移到以太坊2.0 - EthHub
 
-description: There are many things to consider in the migration of Eth 1.0 to Eth 2.0 including Ether migration and state.
+description: Eth 1.0迁移到Eth 2.0需要考虑诸多因素，包括ETH迁移及状态迁移
 ---
 
 # Eth1.0->Eth2.0迁移
 
 ## 介绍
 
-实现 Eth 1.0到 Eth 2.0之间的迁移要考虑两大重要因素：现有ETH迁移、链状态迁移。
+实现Eth 1.0到Eth 2.0之间的迁移要考虑两大重要因素：现有ETH迁移、链状态迁移。
 
 ## 迁移ETH
 
