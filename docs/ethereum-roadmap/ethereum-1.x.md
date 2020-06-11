@@ -1,7 +1,7 @@
 ---
 title: Ethereum 1.x - EthHub
 
-description: Ethereum 1.x is an effort to improve performance and storage of the current Ethereum mainnet.
+description: Ethereum 1.x目的在于针对当前的以太坊主网进行性能和存储优化
 ---
 
 # Ethereum 1.x
