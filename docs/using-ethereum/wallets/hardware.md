@@ -1,7 +1,7 @@
 ---
 title: 以太坊硬件钱包 - EthHub
 
-description: 以太坊硬件钱包的优缺点及种类
+description: 以太坊硬件钱包优缺点及种类
 ---
 
 # 硬件钱包
