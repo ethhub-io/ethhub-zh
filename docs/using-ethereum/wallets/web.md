@@ -1,41 +1,41 @@
 ---
-title: Ethereum Web Wallets - EthHub
+title: 以太坊网页钱包 - EthHub
 
-description: Explanation of Ethereum web wallets pros and cons as well as a list of applications.
+description: 以太坊网页钱包优缺点及应用列表
 ---
 
-# Web
+# 网页钱包
 
-## Summary
+## 概要
 
-Web wallets are wallets hosted on a website, they may be custodial or act as an interface for users to generate and interact with their accounts.
+网页钱包是是网页托管式钱包，既可以对钱包进行托管，也可以充当用户创建钱包或与其他账户交互时的接口。
 
-## Pros and Cons
+## 优缺点
 
-### Pros
+### 优点
 
-* Highly Available and Accessible.
+* 可用性和可及性强
 
-### Cons
+### 缺点
 
-* Rely on each provider to provide good security and to respect your privacy.
+* 依赖供应商提供安全性和隐私性
 
 ## Wallets
 
-* [Metamask](https://metamask.io/) - Chrome extension Ether wallet with ERC tokens support
-* [MyEtherWallet](https://github.com/MyEtherWallet) - Open-source [tool](https://www.myetherwallet.com/) for interacting with the blockchains easily & securely
-* [MyCrypto](https://github.com/MyCryptoHQ) - Open-source, client-side [tool](https://mycrypto.com/account) for generating ether wallets, handling ERC-20 tokens, and interacting with the blockchain more easily
-* [Torus](https://tor.us/) - OAuth Single-sign ons to Dapps with email (and other) account resolvers
-* [Portis](https://portis.io/) - Web-based wallet for easy user on-boarding to your DApp
-* [Eth lightwallet](https://github.com/ConsenSys/eth-lightwallet) - Lightweight JS Wallet for Node and the browser
-* [SpankCard](https://github.com/SpankChain/SpankCard) - An in-browser Ethereum wallet with support for payment channels
-* [Mnemonic generator](https://iancoleman.io/bip39/) - generate word mnemonic and associated public/private key pairs. Select "Ethereum" as coin to generate Ethereum addresses. Useful for truffle-hd-wallet.
-* [Fetch](https://hellofetch.co/download) - Web-based \(and desktop\) wallet supporting Ethereum and ERC-20 tokens. Integrated with 20 exchanges for real time trading rates and one-click trading.
+* [Metamask](https://metamask.io/) - Chrome插件以太坊钱包，支持ERC代币。
+* [MyEtherWallet](https://github.com/MyEtherWallet) - 开源[工具](https://www.myetherwallet.com/)，提供更简单更安全的区块链交互方式。
+* [MyCrypto](https://github.com/MyCryptoHQ) - 开源的用户端[工具](https://mycrypto.com/account)，用于生成以太坊钱包，处理ERC-20代币，提供更简单的区块链交互方式。
+* [Torus](https://tor.us/) - 使用电子邮件（和其他）账户解析器OAuth单点登录Dapps。
+* [Portis](https://portis.io/) - 网页式钱包，方便用户登录到自己的DApp账户。
+* [Eth lightwallet](https://github.com/ConsenSys/eth-lightwallet) - 节点与浏览器可用的JS轻钱包。
+* [SpankCard](https://github.com/SpankChain/SpankCard) - 浏览器内置以太坊钱包，设有支付渠道。
+* [Mnemonic generator](https://iancoleman.io/bip39/) - 生成单词助记符和相关的公钥/私钥对。选择“Ethereum”代币可生成以太坊地址。truffle-hd-wallet可用。
+* [Fetch](https://hellofetch.co/download) - 支持以太坊和ERC-20代币的网页（和桌面）钱包。集成了20个交易所的实时交易率信息和一键交易功能。
 * [Zapper](https://zapper.fi/) - Manage your DeFi assets & liabilities in one simple interface. Ability to combine different DeFi building blocks to create your own instruments, strategies or even entirely new use-cases.
-* [Zerion](https://zerion.io/) - Web-based wallet interface with native DeFi integrations for trading, borrowing and investing. Features historical portfolio, Metamask, WalletConnect and Uniswap integrations. 
-* [Tokenary](https://tokenary.io/macos/) - macOS Safari extension that enables interaction with DApps.
+* [Zerion](https://zerion.io/) - 网页钱包界面，集交易、借贷和投资一体的本地DeFi服务。集成既有投资组合、Metamsk、WalletConnect、Uniswap。
+* [Tokenary](https://tokenary.io/macos/) - macOS Safari浏览器插件，可与Dapp交互。
 	
-## Resources
+## 参考资源
 
-* [Consensys's ethereum-developer-tools-list](https://github.com/ConsenSys/ethereum-developer-tools-list/blob/master/EcosystemResources.md)
+* [Consensys的以太坊开发者工具清单](https://github.com/ConsenSys/ethereum-developer-tools-list/blob/master/EcosystemResources.md)
 
