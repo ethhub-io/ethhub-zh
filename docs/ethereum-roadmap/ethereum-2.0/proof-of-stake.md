@@ -1,7 +1,7 @@
 ---
-title: Ethereum Proof of Stake - EthHub
+title: 以太坊权益证明 - EthHub
 
-description: Information on Proof of Stake and how it will work on Ethereum.
+description: 权益证明相关信息以及该机制如何在以太坊上运行
 ---
 
 # Proof of Stake (权益证明，PoS)
