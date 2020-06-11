@@ -1,7 +1,7 @@
 ---
 title: 以太坊移动钱包 - EthHub
 
-description: 以太坊移动钱包的优缺点以及应用列表
+description: 以太坊移动钱包优缺点及应用列表
 ---
 
 # 移动钱包
