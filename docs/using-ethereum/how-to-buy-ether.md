@@ -1,7 +1,7 @@
 ---
-title: How to Buy Ether - EthHub
+title: 如何购买ETH - EthHub
 
-description: Best ways to buy ETH (Ether), the currency needed to use the Ethereum network.
+description: 参与以太坊网络需要ETH，如何购买ETH
 ---
 
 # 如何购买ETH
