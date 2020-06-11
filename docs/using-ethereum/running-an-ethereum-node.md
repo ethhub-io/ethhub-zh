@@ -1,7 +1,7 @@
 ---
-title: Running an Ethereum Node - EthHub
+title: 运行以太坊节点 - EthHub
 
-description: Proper ways to run a Parity or Geth Ethereum node.
+description: 如何运行Parity和Geth节点
 ---
 
 # 运行以太坊节点
