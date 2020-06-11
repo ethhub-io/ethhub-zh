@@ -1,14 +1,14 @@
 ---
 title: Optimistic Rollups - EthHub
 
-description: Optimistic Rollups (ORs) are one type of layer 2 constructions that do not run on Ethereum's base layer but on top of it.
+description: Optimistic Rollups（OR）是一种第二层解决方案，不直接在以太坊基础层中构建，而是基于以太坊进行构建
 ---
 
 # Optimistic Rollups
 
 ## 简介
 
-Optimistic Rollups（OR）是一种第二层解决方案，也就是说不直接在以太坊基础层中构建，而是基于以太坊之进行构建。好处在于可以规模化运行智能合约，同时还能受到共享以太坊的安全性。其构造类似于Plasma，虽然无法达到Plasma几近无限的扩容能力，OR选择使用与EVM兼容的OVM（Optimistic虚拟机），使其能够像以太坊一样运作。
+Optimistic Rollups（OR）是一种第二层解决方案，也就是说不直接在以太坊基础层中构建，而是基于以太坊进行构建。好处在于可以规模化运行智能合约，同时还能受到共享以太坊的安全性。其构造类似于Plasma，虽然无法达到Plasma几近无限的扩容能力，OR选择使用与EVM兼容的OVM（Optimistic虚拟机），使其能够像以太坊一样运作。
 
 其名称“Opmistic Rollup”源自于这个解决方案本身的特征。之所以采用“Optimistic”（乐观），是因为聚合者仅发布最少量的所需信息，而无需提供任何证明，前提是聚合者没有实施欺诈行为，且仅在发生欺诈时提供证明。之所以使用“Rollups”，是因为交易以捆绑形式提交到主链（也即，交易被rolled-up）。
 
