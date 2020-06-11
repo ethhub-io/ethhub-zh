@@ -1,7 +1,7 @@
 ---
-title: What is Ethereum? - EthHub
+title: 以太坊是什么？ - EthHub
 
-description: Ethereum is an open-source, permissionless blockchain-based distributed ledger providing infrastructure for distributed computing and economic activities.
+description: 以太坊是一个开源的、无需许可的、基于区块链的分布式账本，为分布式计算和经济活动提供基础设施。
 ---
 
 # 以太坊是什么？
