@@ -1,7 +1,7 @@
 ---
-title: Ethereum 2.0 Phases - EthHub
+title: 以太坊2.0各阶段 - EthHub
 
-description: A guide to the phases and implementation plans of Ethereum 2.0.
+description: 以太坊2.0各阶段以及实现计划
 ---
 
 # 以太坊2.0各阶段
