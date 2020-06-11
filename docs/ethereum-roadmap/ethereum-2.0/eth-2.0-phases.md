@@ -8,7 +8,7 @@ description: A guide to the phases and implementation plans of Ethereum 2.0.
 
 _随着以太坊2.0不断进行大量的研发工作，该页面可能自然而然地就会过时了。我们只能尽最大的努力保持其更新。最后一次更新时间为2019年11月16日。_
 
-This page is also available in [German](eth-2.0-phases-german.md) and [Portuguese](eth-2.0-phases-portuguese.md).
+本页面还提供[德语](eth-2.0-phases-german.md)以及[葡萄牙语](eth-2.0-phases-portuguese.md)版本。
 
 ## 介绍
 
