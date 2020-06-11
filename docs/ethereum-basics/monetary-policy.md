@@ -1,7 +1,7 @@
 ---
-title: Ethereum’s Monetary Policy - EthHub
+title: 以太坊货币政策 - EthHub
 
-description: A description of Ethereum’s monetary (issuance) policy in the past, present and future.
+description: A description of Ethereum’s monetary (issuance) policy in the past, present and future.阐释以太坊过去、现在以及未来的货币政策（发行率）
 ---
 
 # 货币政策
