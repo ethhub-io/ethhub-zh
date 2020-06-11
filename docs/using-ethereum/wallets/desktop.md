@@ -1,7 +1,7 @@
 ---
 title: 以太坊桌面钱包 - EthHub
 
-description: 阐释以太坊桌面钱包的优缺点以及应用列表
+description: 以太坊桌面钱包优缺点及应用列表
 ---
 
 # 桌面钱包
