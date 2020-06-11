@@ -1,7 +1,7 @@
 ---
-title: Ethereum 2.0 Economics - EthHub
+title: 以太坊2.0经济学 - EthHub
 
-description: A deep dive on the economics in Ethereum 2.0 including staking rewards and issuance rate.
+description: 深入理解以太坊2.0经济学，包括质押奖励及发行率
 ---
 
 # 以太坊2.0经济学
