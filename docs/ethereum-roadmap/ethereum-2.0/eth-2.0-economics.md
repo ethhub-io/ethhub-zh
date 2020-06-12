@@ -71,7 +71,7 @@ description: 深入理解以太坊2.0经济学，包括质押奖励及发行率
 	* 除了客户端代码故障外，质押者还要负责维护其验证者客户端的安全环境，包括网络连接、操作系统、硬件等方面。如果其验证者客户端由于安全故障而被黑客入侵，导致强制停机或行为不当，目前无法恢复被扣除的资金。
 	* 此处的安全风险，类似于笔记本电脑或智能手机被入侵后钱包中的ETH被窃取。实行去中心化自治的同时，也要承担相应的责任。
 
-如果对成为验证者感兴趣的话，建议阅读： [进行质押前验证者需要知晓的八件事](https://medium.com/chainsafe-systems/8-things-every-eth2-validator-should-know-before-staking-94df41701487).
+如果对成为验证者感兴趣的话，建议阅读：[进行质押前验证者需要知晓的八件事](https://medium.com/chainsafe-systems/8-things-every-eth2-validator-should-know-before-staking-94df41701487)。
 
 ## 竞争
 
