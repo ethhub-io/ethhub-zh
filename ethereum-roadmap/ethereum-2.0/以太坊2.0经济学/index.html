@@ -1,0 +1,1114 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="深入理解以太坊2.0经济学，包括质押奖励及发行率">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-3.3.0">
+    
+    
+      
+        <title>以太坊2.0经济学 - EthHub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.63c76b3b.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.4637f1a4.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.962652e9.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../extra.css">
+    
+    
+      
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125892125-2"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125892125-2")</script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="ethhub" data-md-color-accent="">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#20" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="EthHub" class="md-header-nav__button md-logo">
+          
+            <img src="../../../logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                EthHub
+              </span>
+              <span class="md-header-nav__topic">
+                以太坊2.0经济学
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/ethhub-io/ethhub-zh/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      ethhub-io/ethhub-zh
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." title="Home" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../ethereum-basics/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%98%AF%E4%BB%80%E4%B9%88/" title="Ethereum Basics" class="md-tabs__link">
+          Ethereum Basics
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../%E4%BB%A5%E5%A4%AA%E5%9D%8A2.0%E5%90%84%E9%98%B6%E6%AE%B5/" title="Ethereum Roadmap" class="md-tabs__link md-tabs__link--active">
+          Ethereum Roadmap
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../using-ethereum/%E5%A6%82%E4%BD%95%E8%B4%AD%E4%B9%B0ETH/" title="Using Ethereum" class="md-tabs__link">
+          Using Ethereum
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="EthHub" class="md-nav__button md-logo">
+      
+        <img src="../../../logo.png" width="48" height="48">
+      
+    </a>
+    EthHub
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/ethhub-io/ethhub-zh/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      ethhub-io/ethhub-zh
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../ethereum-basics/what-is-ethereum.md" title="Docs" class="md-nav__link">
+      Docs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://podcast.ethhub.io" title="Podcast" class="md-nav__link">
+      Podcast
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://ethhub.substack.com/" title="Newsletter" class="md-nav__link">
+      Newsletter
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://shop.ethhub.io" title="Shop" class="md-nav__link">
+      Shop
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Ethereum Basics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Ethereum Basics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ethereum-basics/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%98%AF%E4%BB%80%E4%B9%88/" title="以太坊是什么？" class="md-nav__link">
+      以太坊是什么？
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ethereum-basics/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E8%B4%A7%E5%B8%81%E6%94%BF%E7%AD%96/" title="以太坊货币政策" class="md-nav__link">
+      以太坊货币政策
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+    
+    <label class="md-nav__link" for="nav-7">
+      Ethereum Roadmap
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Ethereum Roadmap
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1" type="checkbox" id="nav-7-1" checked>
+    
+    <label class="md-nav__link" for="nav-7-1">
+      Ethereum 2.0
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-1">
+        Ethereum 2.0
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E4%BB%A5%E5%A4%AA%E5%9D%8A2.0%E5%90%84%E9%98%B6%E6%AE%B5/" title="以太坊2.0各阶段" class="md-nav__link">
+      以太坊2.0各阶段
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%9D%83%E7%9B%8A%E8%AF%81%E6%98%8E/" title="以太坊权益证明" class="md-nav__link">
+      以太坊权益证明
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E4%BB%A5%E5%A4%AA%E5%9D%8A%E4%B8%AD%E7%9A%84%E5%88%86%E7%89%87/" title="以太坊中的分片" class="md-nav__link">
+      以太坊中的分片
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        以太坊2.0经济学
+      </label>
+    
+    <a href="./" title="以太坊2.0经济学" class="md-nav__link md-nav__link--active">
+      以太坊2.0经济学
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="介绍" class="md-nav__link">
+    介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="术语" class="md-nav__link">
+    术语
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="质押奖励" class="md-nav__link">
+    质押奖励
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="质押成本与风险" class="md-nav__link">
+    质押成本与风险
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="竞争" class="md-nav__link">
+    竞争
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="相关资源" class="md-nav__link">
+    相关资源
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E4%BB%8E%E4%BB%A5%E5%A4%AA%E5%9D%8A1.0%E8%BF%81%E7%A7%BB%E5%88%B0%E4%BB%A5%E5%A4%AA%E5%9D%8A2.0/" title="从以太坊1.0迁移到以太坊2.0" class="md-nav__link">
+      从以太坊1.0迁移到以太坊2.0
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E6%A6%82%E8%A7%88/" title="概览" class="md-nav__link">
+      概览
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-3" type="checkbox" id="nav-7-3">
+    
+    <label class="md-nav__link" for="nav-7-3">
+      Layer 2 Scaling
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-3">
+        Layer 2 Scaling
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../layer-2-scaling/zk-rollups/" title="ZK-Rollups" class="md-nav__link">
+      ZK-Rollups
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../layer-2-scaling/optimistic_rollups/" title="Optimistic Rollups" class="md-nav__link">
+      Optimistic Rollups
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Using Ethereum
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Using Ethereum
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../using-ethereum/%E5%A6%82%E4%BD%95%E8%B4%AD%E4%B9%B0ETH/" title="如何购买ETH" class="md-nav__link">
+      如何购买ETH
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../using-ethereum/%E8%BF%90%E8%A1%8C%E4%BB%A5%E5%A4%AA%E5%9D%8A%E8%8A%82%E7%82%B9/" title="运行以太坊节点" class="md-nav__link">
+      运行以太坊节点
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-3" type="checkbox" id="nav-8-3">
+    
+    <label class="md-nav__link" for="nav-8-3">
+      Wallets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-3">
+        Wallets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../using-ethereum/wallets/%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%A4%AA%E5%9D%8A%E9%92%B1%E5%8C%85/" title="介绍以太坊钱包" class="md-nav__link">
+      介绍以太坊钱包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../using-ethereum/wallets/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E9%92%B1%E5%8C%85/" title="以太坊智能合约钱包" class="md-nav__link">
+      以太坊智能合约钱包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../using-ethereum/wallets/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A1%AC%E4%BB%B6%E9%92%B1%E5%8C%85/" title="以太坊硬件钱包" class="md-nav__link">
+      以太坊硬件钱包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../using-ethereum/wallets/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%BB%E5%8A%A8%E9%92%B1%E5%8C%85/" title="以太坊移动钱包" class="md-nav__link">
+      以太坊移动钱包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../using-ethereum/wallets/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%A1%8C%E9%9D%A2%E9%92%B1%E5%8C%85/" title="以太坊桌面钱包" class="md-nav__link">
+      以太坊桌面钱包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../using-ethereum/wallets/web.md" title="以太坊网页钱包" class="md-nav__link">
+      以太坊网页钱包
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="介绍" class="md-nav__link">
+    介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="术语" class="md-nav__link">
+    术语
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="质押奖励" class="md-nav__link">
+    质押奖励
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="质押成本与风险" class="md-nav__link">
+    质押成本与风险
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="竞争" class="md-nav__link">
+    竞争
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="相关资源" class="md-nav__link">
+    相关资源
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ethhub-io/ethhub-zh/edit/master/docs/ethereum-roadmap/ethereum-2.0/以太坊2.0经济学.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="20">以太坊2.0经济学</h1>
+<h2 id="_1">介绍</h2>
+<p>以太坊2.0升级将实现从工作量证明（PoW）到权益证明（PoS）的转换，这意味着维护网络安全的主力军将不再是矿工，而是验证者。其中非常重要的是要掌控好其内在的质押经济，以保持网络健康和安全。</p>
+<p>如果质押激励过少，验证者数量将不足以运行分片网络。如果质押激励过多，网络安全的支出过多，通货膨胀现象达到一定程度时，将损害整个网络的经济效益。</p>
+<p>关于以太坊网络需要多少个验证者，目前有一些考量。根据最新规范，阶段0要求验证者数量至少要达到16,384才能启动信标链。对于阶段1及之后的阶段，每个委员会的验证者数量不低于128个。为了能够在一个slot内完成所有分片的交联（获取彼此的状态），64个分片统共需要24,244个验证者，以及8,388,608 ETH被质押。</p>
+<h2 id="_2">术语</h2>
+<p>部分来源：https://github.com/ethereum/eth2.0-specs/blob/master/specs/core/0_beacon-chain.md</p>
+<ul>
+<li><strong>验证者</strong> - Casper/分片共识系统的参与者。质押32 ETH即可成为此机制中的一名验证者。</li>
+<li><strong>委员会</strong> - 活跃验证者的伪随机采样子集。当一个委员会以统称形式出现，如“该委员会对X进行证明”时，意思是“该委员会的某个子集包含足够的验证者，协议判断其能够代表委员会”。</li>
+<li><strong>发行率</strong> - ETH供应量年均增长率。</li>
+<li><strong>收益率</strong> - 验证者年均ETH收益率。</li>
+</ul>
+<h2 id="_3">质押奖励</h2>
+<p>为了激励ETH持有者进行质押，验证者会因其履行职责而获得奖励。每六分钟，验证者会分配到自己的职责，执行完成后会获得奖励。该奖励会基于主网质押总量的变化而动态变化。如果ETH质押总量处于低水平，那么每个验证者的收益率会提高，反之如果质押总量增加，年发行量也会随之增长，以补贴验证者奖励，但是每个验证者的收益率会有所下降。目前的<a href="https://github.com/ethereum/eth2.0-specs/pull/971">奖励机制</a>如下:</p>
+<table>
+<thead>
+<tr>
+<th align="left">ETH质押总额</th>
+<th align="left">年度最大发行量</th>
+<th align="left">最高年发行率 %</th>
+<th align="left">（验证者的）最大年收益率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1,000,000</td>
+<td align="left">181,019</td>
+<td align="left">0.17%</td>
+<td align="left">18.10%</td>
+</tr>
+<tr>
+<td align="left">3,000,000</td>
+<td align="left">313,534</td>
+<td align="left">0.30%</td>
+<td align="left">10.45%</td>
+</tr>
+<tr>
+<td align="left">10,000,000</td>
+<td align="left">572,433</td>
+<td align="left">0.54%</td>
+<td align="left">5.72%</td>
+</tr>
+<tr>
+<td align="left">30,000,000</td>
+<td align="left">991,483</td>
+<td align="left">0.94%</td>
+<td align="left">3.30%</td>
+</tr>
+<tr>
+<td align="left">100,000,000</td>
+<td align="left">1,810,193</td>
+<td align="left">1.71%</td>
+<td align="left">1.81%</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://www.reddit.com/r/ethtrader/comments/bffp0n/higher_pos_rewards_proposed/elen71t?utm_source=share&amp;utm_medium=web2x">根据Vitalik Buterin</a>, 以上数据均为最大限值，总发行量会受多种因素影响下降。如下：</p>
+<ul>
+<li>
+<p>验证者离线。结合个人和集体惩罚来看，每1％的验证者下线，总发行量就会比正常情况减少约3％；若当下离线验证者超过33％，总发行量会严重下降。</p>
+</li>
+<li>
+<p>验证者被罚没。在实际情况中发生的概率较低。</p>
+</li>
+<li>
+<p><a href="https://medium.com/@TrustlessState/eip-1559-the-final-puzzle-piece-to-ethereums-monetary-policy-58802ab28a27">EIP 1559</a>提议销毁交易费（最初交易量较低时，估计每年减少约10,000 个ETH，最终有望提高到每年减少数十万个ETH）</p>
+</li>
+</ul>
+<h2 id="_4">质押成本与风险</h2>
+<p>天下没有免费的午餐，验证者想要获得奖励也需要一定成本。成为验证者前要考虑很多因素，以权衡自己的付出与收获的质押回报。考虑因素如下：</p>
+<ul>
+<li>
+<p>计算成本</p>
+<ul>
+<li>至少需要运行验证者客户端，并且可能还需要运行一个信标节点，这是算力资源成本。</li>
+<li>信标节点：要运行一个类似目前geth/parity的客户端。</li>
+<li>验证者客户端：属于轻客户端，每质押32 ETH就需要运行一个验证者客户端。</li>
+<li>估计运行一个信标节点和验证者客户端的年均成本为120美元</li>
+</ul>
+</li>
+<li>
+<p>资金获取与锁定</p>
+<ul>
+<li>用户需要获取质押所必要的32 ETH，并单向转账至存款合约</li>
+<li>质押者在质押期间无法直接出售ETH。</li>
+<li>在阶段0期间，资金会在信标链上被锁定至阶段1。中途可以停止验证工作，但在提交且退出后，用户在阶段1之前无法提取出质押金。</li>
+</ul>
+</li>
+<li>
+<p>代码风险</p>
+<ul>
+<li>质押ETH之后，你就要信任所运行的质押软件，保证其准确履行职责。然而有了区块浏览器和验证者控制板工具，我们可以轻易识别哪个环节出错。构建出功能性强、可靠的软件就是实现者的职责了。</li>
+<li>当然全网范围也可能发生错误，但如果有必要的话，基本可以通过硬分叉来修复。</li>
+</ul>
+</li>
+<li>
+<p>一般运行时和维护成本</p>
+<ul>
+<li>如果在线时间大于50%（假定网络情况正常），用户可以保持净收益。对于无法保证一定运行时间的用户，质押并非明智的选择。</li>
+<li>如果超过1/3的验证者同时离线，那么网络无法继续对区块进行最终确定。如果这种情况持续4个epoch，那么所有离线的验证者会触发最终确定性泄漏惩罚。</li>
+<li>如果用户想要将他们的验证者分布在多个设定中，那么就不得不考虑维护成本和基础设施的因素。</li>
+</ul>
+</li>
+<li>
+<p>安全风险</p>
+<ul>
+<li>除了客户端代码故障外，质押者还要负责维护其验证者客户端的安全环境，包括网络连接、操作系统、硬件等方面。如果其验证者客户端由于安全故障而被黑客入侵，导致强制停机或行为不当，目前无法恢复被扣除的资金。</li>
+<li>此处的安全风险，类似于笔记本电脑或智能手机被入侵后钱包中的ETH被窃取。实行去中心化自治的同时，也要承担相应的责任。</li>
+</ul>
+</li>
+</ul>
+<p>如果对成为验证者感兴趣的话，建议阅读：<a href="https://medium.com/chainsafe-systems/8-things-every-eth2-validator-should-know-before-staking-94df41701487">进行质押前验证者需要知晓的八件事</a>。</p>
+<h2 id="_5">竞争</h2>
+<p>确定是否值得成为以太坊验证者的一个非常重要的因素就是，要权衡质押净收入与其他竞争者提供的回报。</p>
+<p><strong>去中心化金融</strong><br />
+去中心化金融应用如<a href="https://compound.finance/">Compound Finance</a>、<a href="https://dharma.io/">Dharma</a>和<a href="https://makerdao.com/">Maker</a>，为用户提供了锁定ETH获取奖励的新方式。但用户需要了解这些产品如何运作，以及未来将如何演变。</p>
+<p><strong>其他投资手段</strong><br />
+诸如债券、储蓄等更传统的投资替代方案也可以被视为以太坊质押的竞争者。尽管不像DeFi应用具有直接竞争性，但其仍然需要纳入考虑范围。 </p>
+<h2 id="_6">相关资源</h2>
+<ul>
+<li><a href="https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1446566120">ETH2 Staking 计算器</a></li>
+<li><a href="https://medium.com/chainsafe-systems/8-things-every-eth2-validator-should-know-before-staking-94df41701487">进行质押前验证者需要知晓的八件事</a></li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../%E4%BB%A5%E5%A4%AA%E5%9D%8A%E4%B8%AD%E7%9A%84%E5%88%86%E7%89%87/" title="以太坊中的分片" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                以太坊中的分片
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../%E4%BB%8E%E4%BB%A5%E5%A4%AA%E5%9D%8A1.0%E8%BF%81%E7%A7%BB%E5%88%B0%E4%BB%A5%E5%A4%AA%E5%9D%8A2.0/" title="从以太坊1.0迁移到以太坊2.0" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                从以太坊1.0迁移到以太坊2.0
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        <a href="https://etherscan.io/address/0xa19fcdad77c1f0fd184689aca88babcf68010347">Donate: 0xA19FCDaD77C1F0fd184689aca88BabCF68010347</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/ethhub-io/ethhub" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/ethhub_io" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://medium.com/ethhub" class="md-footer-social__link fa fa-medium"></a>
+    
+      <a href="https://discordapp.com/invite/gw8AM98" class="md-footer-social__link fa fa-comment"></a>
+    
+      <a href="https://www.instagram.com/ethhub_io/" class="md-footer-social__link fa fa-instagram"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.3a8f445d.js"></script>
+      
+      <script>app.initialize({version:"1.1.2",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>
