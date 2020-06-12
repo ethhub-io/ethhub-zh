@@ -1,25 +1,25 @@
 ---
-title: Ethereum Smart Contract Wallets - EthHub
+title: 以太坊智能合约钱包 - EthHub
 
-description: Explanation of Ethereum smart contract wallets as well as a list of applications.
+description: 以太坊智能合约钱包优缺点及应用列表
 ---
 
-# Smart Contract Wallets
+# 智能合约钱包
 
-## Summary
+## 概要
 
-Smart contract wallets are wallets with unique abilities due to the power of smart contract functionality. They enable additional security and recovery features for users.
+智能合约钱包由于具备智能合约的功能性，功能独特而强大，为用户提供了额外的安全性和恢复功能。
 
-## Unique features
+## 特征
 
-* Two factor authentication
-* Social recovery through family or friends
-* Rate-limited withdraws like an ATM
-* Personal whitelists and blacklists
-* Fraud alerts and emergency lockdown
+* 双重验证
+* 可通过家人或朋友的帮助恢复钱包
+* 像ATM机一样限制提现率
+* 设有个人白名单和黑名单
+* 欺诈警报和紧急锁定
 
-## Mobile Smart Contract Wallets
+## 移动智能合约钱包列表
 
-* [Gnosis Safe](https://safe.gnosis.io/) - The Gnosis Safe aims to provide all users with a convenient, yet secure way to manage their funds and interact with decentralized applications on Ethereum.
-* [Argent](https://www.argent.xyz/) - Enjoy the future of the web with the first smart wallet for Ethereum-based cryptocurrencies and apps.
-* [Authereum](https://authereum.org/) - Authereum is a wallet provider and dapp login solution that uses contract based accounts, meta transactions, Ethereum Name Service and more to provide a seamless onboarding experience that users are familiar with.
+* [Gnosis Safe](https://safe.gnosis.io/) - Gnosis Safe旨在为所有用户提供一种方便安全的资金管理方式，并与以太坊上的去中心化应用程序进行交互。
+* [Argent](https://www.argent.xyz/) - 第一个适用基于以太坊的加密货币和应用程序的智能钱包，带给你未来网络的体验。
+* [Authereum](https://authereum.org/) - Authereum是一个钱包供应商，也是一个dapp登录解决方案，通过基于智能合约的账户、元交易、ENS服务等途径提供用户所熟悉的无缝登录体验。

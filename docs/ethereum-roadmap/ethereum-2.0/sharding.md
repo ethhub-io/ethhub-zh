@@ -1,62 +1,62 @@
 ---
-title: Sharding on Ethereum - EthHub
+title: 以太坊中的分片 - EthHub
 
-description: Information on sharding and how it will work on Ethereum.
+description: 分片相关信息以及分片在以太坊上如何运行
 ---
 
-# Sharding
+# 分片（Sharding）
 
-## Summary
+## 概要
 
-There is a trilemma in blockchain systems that can be visualized in form of a triangle known as DCS triangle, what it conveys is "It is impossible to achieve all three Decentralization, Consistency, and Scalability simultaenously. A tradeoff is necessary \(you can choose any two but not all\)". 
+在区块链系统里存在着一个三元悖论，我们可以将其想象成一个三角形并称之为“DCS不可能三角”。该三元悖论指的是：想要同时实现去中心化、一致性、可扩展性是不可能的。因此，我们需要权衡选择（也就是说，我们只能选择其中两者，无法同时实现三者）。
 
 ![](/assets/images/dcs-triangle.png)
 
-Sharding is an attempt to solve this challenge. It simply means partitioning large chains \(databases\) into smaller, faster ones hence making the entire system more scalable. How?
-To solve scalability, we split the state and history stored on the main chain into shards. Each shard manages itself, has its own  transaction history, and the effect of transactions in some shard are limited to that shard only.
+而分片的提出便是想要解决该难题。分片机制简单来说就是：将长链（数据库）划分为更短、处理速度更快的链，从而提高整个系统的扩容能力。
+具体怎么实施？为了解决扩容性问题，我们将存储在主链上的状态和历史数据迁移到分片上。每个分片实行自我管理，记录自己的交易数据，并且在某些分片中发生的交易仅对其自身产生影响。
 
-Examples for this would be:
-* A dApp having a whole shard by himself so that all tx's related to it will be on that one shard only.
-* Several dApps related to a particular domain will be on one single shard.
+举个例子：
+* 一个去中心化应用（dAPP）有自身的完整分片，因此所有与之相关的交易仅在其分片上进行。
+* 某个特定领域的多个相关dApps上的交易也将在单个分片上进行。
 
-The later phases of ETH2.0 considers the possibility of cross-shard communications.
+ETH2.0的后续阶段将考虑跨分片通信的可能性。
 
-Sharding also introduces different types of nodes like "Light Node", "Super-Full Node" etc. depending upon how much data it downloads, how much it verifies. 
+分片还引入了不同类型的节点，例如“轻节点”、“超级全节点”等，而具体节点类型取决于分片下载以及验证的数据量。
 
-## The Scalability Trilemma
+## 扩容三元悖论
 
-The Scalability Trilemma claims that blockchain systems can only, at most, have two of the following three properties:
+根据三元悖论，区块链系统最多只能同时具备以下三种性能的其中两种：
 
-* Decentralization \(defined as the system being able to run in a scenario where each participant only has access to O\(c\) resources, i.e. a regular laptop or small VPS\)
-* Scalability \(defined as being able to process many transactions\)
-* Security \(defined as being secure against attackers with up to O\(n\) resources\)
+* 去中心化（即当参与者只能访问O(c)资源如普通笔记本电脑或小型VPS时，系统仍可以运行）
+* 扩容性（即能够处理大量交易）
+* 安全性（即可以对拥有高至O(n)资源的攻击者进行防御）
 
-The key challenge of scalability is finding a way to achieve all three at the base layer of a blockchain - sharding is one such attempt at solving this challenge.
+扩容性的关键挑战是在在区块链的基础层上同时实现以上三个目标，而分片的提出就是尝试解决这一挑战。
 
-## What is sharding?
+## 分片是什么？
 
-Currently, in all blockchain protocols, each node stores the entire state \(account balances, contract code and storage, etc.\) and processes all transactions. This provides a large amount of security, but greatly limits scalability: a blockchain cannot process more transactions than a single node can. In large part, because of this, Bitcoin is limited to ~3-7 transactions per second, Ethereum to 7-15, etc.
+目前，在所有的区块链协议中，每个节点都需要存储整个系统的状态（包括帐户余额、合约代码和储存等）并处理所有交易。 虽然这保障了系统的安全性，但极大地限制了系统的扩容性：一个区块链能够处理的最大交易量仅为单个节点能够处理的交易量。 因此，在很大程度上，比特币每秒只能处理约3-7笔交易，而以太坊每秒只能处理约7-15笔。
 
-However, this poses a question: are there ways to create a new mechanism, where only a small subset of nodes verifies each transaction? As long as there are sufficiently many nodes verifying each transaction, then the system is still highly secure. But a sufficiently small percentage of the total validator set that the system can process many transactions in parallel, could we not split up transaction processing between smaller groups of nodes to greatly increase a blockchain's total throughput?
+然而，这就抛出了一个问题：能否创建一种新的机制，只有一小部分节点对每一笔交易进行验证？那么只要有足够多的节点来验证每笔交易，系统的安全性仍然是极高的。但是，既然足量的少部分验证者能够使得系统并行处理大量交易，那我们为什么不对处理交易的节点小组进行拆分，从而大幅提高区块链的总吞吐量呢？
 
-## What is the basic idea behind sharding?
+## 分片背后的基本理念是什么？
 
-We split the state and history of Ethereum up into partitions that we call “shards”. For example, a sharding scheme on Ethereum might put all addresses starting with 0x00 into one shard, all addresses starting with 0x01 into another shard, etc. In the simplest form of sharding, each shard also has its own transaction history, and the effect of transactions in some shard are limited to the state of shard of that same shard. One simple example would be a multi-asset blockchain, where there are many shards and where each shard stores the balances and processes the transactions associated with one particular asset. In more advanced forms of sharding, there exists some form of cross-shard communication capability, where transactions on one shard can trigger events on other shards.
-/
-## What might a basic design of a sharded blockchain look like?
+我们将以太坊的状态和历史数据划分为多个部分，将其称之为“分片”。例如，以太坊上的分片机制可能会这样实现：以0x00开头的所有地址将放入某个分片中，而以0x01开头的所有地址则放入另一个分片中，以此类推。在最简单的分片形式中，每个分片也都存储着自己的历史交易数据，并且某些分片中的交易数据仅对其本身的分片状态有影响。一个简单的例子便是多资产区块链，其中存在许多分片，而每个分片存储的是与某一种特定资产相关的余额，并且仅处理该种资产的交易。而在更高级的分片形式中，还有跨分片通信功能，即某个分片上的交易可对另一个分片产生影响。
 
-There exists a set of validators \(ie. proof of stake nodes\), who randomly get assigned the right to create shard blocks. During each slot \(eg. an 8-second period of time\), for each shard in \[0...999\] a random validator gets selected, and given the right to create a block on a shard, which might contain up to, say, 32 kb of data. Also, for each shard, a set of 100 validators get selected as attestors. The header of a block, together with at least 67 of the attesting signatures, can be published as an object that gets included in the "main chain" \(also called the beacon chain\).
+## 分片区块链的基本设计是什么样的？
 
-Note that there are now several "levels" of nodes that can exist in such a system:
+在分片区块链中包含着一组验证者（即权益证明PoS节点），他们被随机分配产生分片区块。在每个时隙（slot）中（例如8秒的时间段），[0 ... 999]中的每个分片，都会随机挑选一名验证者，该验证者有权利产生分片区块，该块可能包含多达32 kb的数据。此外，每个分片中，还将选择100名验证者作为证明者。一个包含至少67份证明签名的区块头，可以被打包进“主链”（也即信标链）。
 
-* Super-full node - downloads the full data of the beacon chain and every shard block referenced in the beacon chain.
-* Top-level node - processes the beacon chain blocks only, including the headers and signatures of the shard blocks, but does not download all the data of the shard blocks.
-* Single-shard node - acts as a top-level node, but also fully downloads and verifies every collation on some specific shard that it cares more about.
-* Light node - downloads and verifies the block headers of main chain blocks only; does not process any collation headers or transactions unless it needs to read some specific entry in the state of some specific shard, in which case it downloads the Merkle branch to the most recent collation header for that shard and from there downloads the Merkle proof of the desired value in the state.
+注意，分片区块链中可以存在以下几种“级别”的节点：
 
-## Resources
+* 超级全节点 - 下载信标链的完整数据以及与信标链相关的每个分片区块的数据。
+* 顶级节点 - 仅处理信标链区块的数据，包括分片区块头和签名，但不下载分片区块的所有数据。
+* 单分片节点 - 拥有顶级节点的功能，但也可以下载并验证某个特定分片上的所有数据。
+* 轻节点 - 仅下载和验证信标链区块头； 除非需要读取某个特定分片状态的特定条目，否则不处理任何区块头和交易数据。在这种情况下，轻节点将下载该分片最新区块头的Merkle分支，继而从中下载状态中所需值的Merkle证明。
 
-* [Sharding FAQ](https://github.com/ethereum/wiki/wiki/Sharding-FAQ)
-* [Sharding Roadmap](https://github.com/ethereum/wiki/wiki/Sharding-roadmap)
-* [DCS Triangle](https://blog.bigchaindb.com/the-dcs-triangle-5ce0e9e0f1dc)
+## 参考资源
+
+* [分片FAQ](https://github.com/ethereum/wiki/wiki/Sharding-FAQ)
+* [分片路线图](https://github.com/ethereum/wiki/wiki/Sharding-roadmap)
+* [DCS不可能三角](https://blog.bigchaindb.com/the-dcs-triangle-5ce0e9e0f1dc)
 

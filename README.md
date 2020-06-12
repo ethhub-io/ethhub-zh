@@ -4,7 +4,7 @@
 
 EthHub旨在为读者提供以太坊相关的重要信息。我们主要通过以下三种形式实现该目标：
 
-1. [文档](https://docs.ethhub.io) - 开源的、易于理解的文档资源
+1. [文档](https://docs.ethhub.io) - 开源、简单明了的文档资源
 2. [播客](https://ethhub.substack.com) - Into the Ether播客
 3. [新闻](https://ethhub.substack.com) - EthHub的Medium资讯页面
 

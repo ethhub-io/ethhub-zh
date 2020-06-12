@@ -1,60 +1,62 @@
 ---
-title: Ethereum’s Monetary Policy - EthHub
+title: 以太坊货币政策 - EthHub
 
-description: A description of Ethereum’s monetary (issuance) policy in the past, present and future.
+description: 阐释以太坊过去、现在以及未来的货币政策（发行率）
 ---
 
-# Monetary Policy
+# 货币政策
 
-## Summary: Minimum Necessary Issuance
+## 概述：最低必要发行量
 
-Ethereum's Monetary Policy is defined by the rewards that are paid out by the protocol at any given time. Ethereum's current yearly network issuance is approximately 4.5% with 2 Ether per block and an additional 1.75 Ether per uncle block \(plus fees\) being rewarded to miners.
+以太坊的货币政策是根据协议在任何给定时间支出的奖励来决定的。以太坊当前的网络年发行率约为4.5％，给矿工的奖励是每个区块2个ETH，另外每个叔块矿工也会获得1.75个ETH的奖励（加上费用）。
 
-Ethereum does not have a fixed supply because a fixed supply would also require a fixed security budget for the Ethereum network. Rather than arbitrarily fix Ethereum's security, Ethereum's monetary policy is best described as "minimum issuance to secure the network". 
+以太坊没有固定的货币供应量，因为固定货币供应量就意味着以太坊网络的安全预算也是固定的。相比随意固定网路的安全预算，最切合以太坊货币政策的描述是“维护网络安全性所需的最低发行量”。
 
-Ethereum has had a history of reducing issuance to these estimated minimums and the network has never increased issuance. The move to proof-of-stake is also part of Ethereum's effort to reduce issuance to minimum amounts without sacrificing security. 
+在以太坊的历史中，也一直遵循着最低必要发行量的原则，并且从未出现增发情况。从工作量证明（PoW）转向权益证明（PoS）共识机制也是以太坊在不牺牲安全性的前提下将发行量降至最低的努力之一。
 
-Ethereum's minimum necessary issuance policy is enforced by a wide range of stakeholders within the ecosystem - including:
+以太坊的最低必要发行量政策由以太坊生态里的各方利益相关者执行，包括：
 
-* Developers
-* Community members
-* Ecosystem spokes/projects
-* Miners and other network participants
+* 开发者
+* 社区成员
+* 生态系统分支/项目方
+* 矿工及其他网络参与者
 
-As Ethereum is a decentralized network, the Monetary Policy cannot be successfully modified unless there is overwhelming consensus from the aforementioned stakeholders. Ethereum follows an [off-chain governance](governance.md) process meaning that any and all decisions on changes to the network happen extra-protocol.
+由于以太坊是一个去中心化的网络，除非征得上述绝大多数利益相关方的共识，否则以太坊的货币政策无法被修改。以太坊遵循链下治理的流程，即所有针对网络的改动都诞生在协议之外。
 
-That said, due to natural incentives, Ether's issuance is unlikely to ever increase unless the security of the network is at risk. Additionally, the upcoming Ethereum 2.0 proof-of-stake transition will progressively allow for a drastic reduction of Ether issuance while maintaining the same level of network security.
+也就是说，以太坊的机制本身决定了，除非网络安全受到威胁，否则ETH的发行量不太可能增加。此外，对于即将到来的权益证明以太坊2.0，也将逐步大幅削减ETH发行量，并且维持同等的网络安全级别。
 
-## Important Events
+## 重大事件
 
-### Genesis Block
+### 创世区块
 
-As part of the Ethereum genesis block, initial contributors to Ethereum sale were allocated 60,000,000 Ether. Another 12,000,000 Ether was given to the development fund which was distributed among early contributors and the Ethereum Foundation.
+作为以太坊创世区块的一部分，参与以太坊预售的初期参与者分配到了60,000,000ETH。另外的 12,000,000 ETH则作为发展基金，主要分配给了早期贡献者和以太坊基金会。
 
-### Historical Issuance Impacts
+### 发行量的历史影响
 
-**Block Reward Reductions**  
-Every block produced on the Ethereum network has an associated block reward which incentivizes miners to support the network. On top of the base block reward, miners that find an [uncle block](../using-ethereum/mining.md) receive ~75% of the current block reward. This results in a growing supply of Ether across time. The history of the block reward are as follows:
+**区块奖励减少**
 
-* Block 0 to Block 4,369,999: 5 Ether
-* Block 4,370,000 to 7,280,000: 3 Ether \(changed via [EIP-649](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-649.md)\)
-* Block 7,280,000 to now: 2 Ether \(changed via [EIP-1234](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1234.md)\)
+以太坊网络上的新区块都会产生相应的区块奖励，用以激励矿工支持网络。除了基本区块的奖励外，找到[叔块](https://docs.ethhub.io/using-ethereum/mining/)的矿工还会得到当前区块奖励的大约75%。这会导致ETH的供应量随时间不断增加。区块奖励的发展史如下：
 
-**Other Events**  
-Issuance rate is also impacted by the speed of blocks. There have been a few other events in Ethereum's history which has impacted the issuance rate. Some planned and some not planned.
+* 区块0—区块4,369,999：5 ETH
+* 区块4,370,000—区块7,280,000：3 ETH （经由[EIP-649](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-649.md)改变）
+* 区块7,280,000—至今：2 ETH （经由[EIP-1234](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1234.md)改变）
 
-* The Homestead fork in March 2016 saw a decrease in block times and therefore a temporary increase in issuance rate.
-* In late 2016, the network was under DDoS attack. This increased the uncle rate, therefore causing a temporary rise in issuance rate.
-* In mid 2017, a mechanism called the difficulty bomb \(or "Ethereum Ice Age"\) started to kick in. This meant that the difficulty of mining a block rose, therefore slowing down blocks. This resulted in a dramatic decrease in issuance rate.
-* In late 2017, the Byzantium fork was released which delayed the difficulty bomb and also reduced block rewards from 5 to 3.
-* In early 2019, after a few months of difficulty bomb activation, the bomb was reset and block rewards were reduced from 3 to 2 in the Constantinople fork.
-* In early 2020, the Muir Glacier fork reset the difficulty bomb.
+**其他事件**  
 
-### Proof of Stake Impact
+ETH的发行率还受到出块速度的影响。历史上还有其他一些事件对发行率产生了影响，其中有些是出于计划，而有些则是意料之外的事件。
 
-According to the current [Eth 2.0 spec](https://github.com/ethereum/eth2.0-specs), issuance rate will be greatly reduced as a part of Proof of Stake. There will be a sliding scale between total amount of Ether at stake and annual interest earned by stakers. The current spec would produce the following annual interest and inflation numbers based on total network stake:
+* 2016年3月“家园”分叉中，出块时间缩短，发行率短暂升高。
+* 2016年末，以太坊网络受到DDoS攻击，叔块率提升，发行率短暂升高。
+* 2017年中，一个名为“难度炸弹”（或“以太坊冰河时期”）的新机制开始生效。这意味着挖矿难度提升，从而降低了出块速度，这使得发行率急剧下降。
+* 2017年末，拜占庭硬分叉激活，延迟了难度炸弹，并将区块奖励从5 ETH降低到3 ETH。
+* 2019年初，在难度炸弹的启动的几个月后，网络进行了君士坦丁堡分叉，重新设定了难度炸弹，并将区块奖励从3 ETH减少到2 ETH。
+* 2020年初，在Muir Glacier硬分叉中难度炸弹被重置。
 
-| ETH validating | Max annual issuance | Max annual network issuance % | Max annual return rate  (for validators) |
+### 权益证明 \(Proof of Stake\) 的影响
+
+根据目前的[Eth 2.0规范](https://github.com/ethereum/eth2.0-specs)，作为权益证明的一部分，发行率将会大幅降低。在ETH质押总额和质押者的年收益率之间会存在一个递减比例。根据当前规范，网络质押总额、年收益率和通胀率（发行率）之间的关系如下：
+
+| ETH质押总额 | 年度最大发行量 | 最高年发行率 | （验证者的）最大年收益率 |
 | :--- | :--- | :--- | :--- |
 | 1,000,000 | 181,019 | 0.17% | 18.10% |
 | 3,000,000 | 313,534 | 0.30% | 10.45% |
@@ -62,14 +64,14 @@ According to the current [Eth 2.0 spec](https://github.com/ethereum/eth2.0-specs
 | 30,000,000 | 991,483 | 0.94% | 3.30% |
 | 100,000,000 | 1,810,193 | 1.71% | 1.81% |
 
-### Historical and Future Supply Forecast
+### 历史发行率及未来发行率预测
 
-There are two majors upcoming factors when it comes to Ethereum's issuance rate and supply curve. They are:
+以太坊发行率和供应曲线将迎来两大影响因素，分别是：
 
-* [Eth2 Phase 0](https://github.com/ethereum/eth2.0-specs/tree/dev/specs/phase0): Slight bump in issuance due to Beacon Chain launch.
-* [Eth2 Phase 1.5](https://github.com/ethereum/eth2.0-specs/tree/dev/specs/phase1): PoW rewards will be removed due to Eth1 PoW chain being [moved into a shard](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-1.0-to-2.0-migration/#new-proposal) on the Eth2 chain. This means that the only rewards on chain will be to PoS validators, using the chart above.
+* [Eth2 阶段0](https://github.com/ethereum/eth2.0-specs/tree/dev/specs/phase0)：信标链发布，发行率略微抬升
+* [Eth2 阶段1.5](https://github.com/ethereum/eth2.0-specs/tree/dev/specs/phase1)：Eth1 PoW链会作为一个分片被迁移到Eth2链上，因此工作量证明产生的奖励将不复存在。这意味着链上唯一的奖励只会以上表的形式分发给PoS验证者。
 
 ![](/assets/images/issuance_graph.png)
 
-## Resources
-* [Ethereum issuance reduction process explained](https://twitter.com/sassal0x/status/1086023932514189312)
+## 相关资源
+* [阐释以太坊发行量降低的过程](https://twitter.com/sassal0x/status/1086023932514189312 )

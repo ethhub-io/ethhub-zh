@@ -1,37 +1,37 @@
 ---
-title: Ethereum Desktop Wallets - EthHub
+title: 以太坊桌面钱包 - EthHub
 
-description: Explanation of Ethereum desktop wallets pros and cons as well as a list of applications.
+description: 以太坊桌面钱包优缺点及应用列表
 ---
 
-# Desktop
+# 桌面钱包
 
-## Summary
+## 概要
 
-Desktop wallets are downloadable apps capable of operating on Windows, MacOS, or Linux that allow users to interact with their funds.
+桌面钱包提供下载，可以在Windows、MacOS或Linux系统中操作，用户可通过桌面钱包与资金交互。
 
-## Pros and Cons
+## 优缺点
 
-### Pros
+### 优点
 
-* If you're able to create/sign transactions offline, this is the most-secure method for interacting with the Ethereum blockchain.
-* Non-custodial, and more private than most other methods of interacting with your funds.
+* 如果用户能够离线创建/签署交易，这是与以太坊区块链最安全的交互方法
+* 非托管钱包，相比其他大多数与资金交互方式更为私密
 
-### Cons
+### 缺点
 
-* May be more of a hassle when used offline than other methods of accessing your funds.
+* 与其他方式相比，离线使用时不方便
 
-## Wallets
+## 桌面钱包列表
 
-* [MyCrypto](https://github.com/MyCryptoHQ) - Open-source, client-side tool downloadable from [https://download.mycrypto.com](https://download.mycrypto.com) for generating Ethereum wallets, handling ERC-20 tokens, and interacting with the blockchain easily.
-* [Atomic Wallet](https://atomicwallet.io) - Desktop and mobile wallet that allows you to buy, manage and exchange Bitcoin, Ethereum, XRP and over 300 coins and tokens in one secure interface.
-* [Eidoo](https://eidoo.io/) - Multicurrency and Multiplatform \(Windows, Mac, Linux, Andorid, iOs\) wallet with a DEX and a DeFI gateway
-* [Exodus](https://exodus.io) - Closed-source wallet that allows for multi-currency interaction/transacting \(requires you to be online to generate transactions\).
-* [Fetch](https://hellofetch.co/download) - Desktop \(and web\) wallet supporting Ethereum and ERC-20 tokens. Integrated with 20 exchanges for real time trading rates and one-click trading.
-* [Tokenary](https://tokenary.io/masos) - a macOS Ethereum and ERC-20 tokens wallet and Safari extension that lets you store your assets and interact with DApps.
-* [HUT34](https://wallet.hut34.io/) - An Ethereum web-based wallet.
+* [MyCrypto](https://github.com/MyCryptoHQ) - 可从[https://download.mycrypto.com](https://download.mycrypto.com/) 下载的开源客户端工具，用于生成以太坊钱包，处理ERC-20代币，使与区块链进行交互更轻松。
+* [Atomic Wallet](https://atomicwallet.io) - 一款适用于Android和iOS系统的多币种钱包，助你轻松管理比特币、以太币、XRP等300多种通证。
+* [Eidoo](https://eidoo.io/) - 带有去中心化交易所和DeFi网关的多币种、多平台钱包（Windows，Mac，Linux，Android，iOs系统）。
+* [Exodus](https://exodus.io) - 允许多币种交互/交易的闭源钱包（需要在线创建交易）。
+* [Fetch](https://hellofetch.co/download) - 支持以太坊和ERC-20代币的桌面（和网页）钱包，集成了20个交易所的实时交易率显示，支持一键式交易。
+* [Tokenary](https://tokenary.io/masos) - macOS系统的以太坊和ERC-20钱包，Safari浏览器插件，可存储资产并与DApp进行交互。
+* [HUT34](https://wallet.hut34.io/) - 网页式以太坊钱包。
 
 
-## Resources
+## 参考资源
 
-* [Ethereum Developer Tools List](https://github.com/ConsenSys/ethereum-developer-tools-list/blob/master/EcosystemResources.md)
+* [以太坊开发者工具清单](https://github.com/ConsenSys/ethereum-developer-tools-list/blob/master/EcosystemResources.md)

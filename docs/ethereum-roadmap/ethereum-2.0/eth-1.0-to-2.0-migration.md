@@ -1,114 +1,111 @@
 ---
-title: Migration from Ethereum 1.0 to Ethereum 2.0 - EthHub
+title: 从以太坊1.0迁移到以太坊2.0 - EthHub
 
-description: There are many things to consider in the migration of Eth 1.0 to Eth 2.0 including Ether migration and state.
+description: Eth 1.0迁移到Eth 2.0需要考虑诸多因素，包括ETH迁移及状态迁移
 ---
 
-# Eth 1.0 to 2.0 Migration
+# Eth1.0->Eth2.0迁移
 
-## Introduction
+## 介绍
 
-There are two important factors to consider when it comes to migrating from the Eth 1.0 chain to the Eth 2.0 chain. First, we have the need to migrate existing ether over and secondly, we have to transition the state of the chain over.
+实现Eth 1.0到Eth 2.0之间的迁移要考虑两大重要因素：现有ETH迁移、链状态迁移。
 
-## Ether Migration
+## 迁移ETH
 
-The current proposal is that in [phase 0](./eth-2.0-phases.md#phase-0-beacon-chain), users on the Eth 1.0 chain will be able to lock their ether up in a contract and will be credited with that same amount of ether on the Beacon Chain in Eth 2.0. At that point, they can stake that ether and begin to earn rewards on the Eth 2.0 chain. However, there is also some community interest in creating a two way bridge for that ether between the 1.0 and 2.0 chains. Pros and cons of each bridge are found below.
+当前 [phase 0](./eth-2.0-phases.md#phase-0-beacon-chain)提案是，阶段0期间 Eth1 .0链上的用户能够将ETH锁定在合约中，然后在Eth2 .0信标链上获得等量的ETH。那时，用户就能够质押ETH，并且在Eth 2.0链上获取收益。然而，在1.0和2.0链之间建立双向桥接也吸引了来自社区的关注。两种桥接方案的优缺点如下：
 
-**One-way bridge**
+**单向桥接**
 
-| Pros | Cons |
+| 优点 | 缺点 |
 | :--- | :--- |
-| Steady security, deposits can only go up | High lockup risk for early stakers (at least ~1.5 years) |
-| Less complexity for early stages | Potential for two coins via futures market |
-| Keeps forks isolated to each chain | Fragmented community/economics |
+| 具有稳定的安全性，只可以增量质押 | 早期锁定者至少在一年半内承担高风险 |
+| 早期阶段复杂度较低 | 期货市场有可能会存在两种不同虚拟货币 |
+| 链分叉相互独立 | 导致社区/经济分裂 |
  
 
-**Two-way bridge**
+**双向桥接**
 
-| Pros | Cons |
+| 优点 | 缺点 |
 | :--- | :--- |
-| Less risk of lockup, more deposit inflow | High volatility of total stake |
-| Keeps just a single ETH coin, no Beacon ETH \(BETH\) ([only if issuance of Eth 1.0 is changed](https://medium.com/@fubuloubu/economically-linking-ethereum-1-0-2-0-e5af0fec02ed)) | Additional code complexity in early stages |
-| If issues arise with Eth 2.0, can bring coins back | Risk of lockup is absent, will likely see more games played on early code |
+| 锁定风险较低，质押量更多 | 质押总量不稳定 |
+| 保持只有一种ETH代币，而不会出现信标ETH \(BETH\) ([除非Eth 1.0的发行量发生改变](https://medium.com/@fubuloubu/economically-linking-ethereum-1-0-2-0-e5af0fec02ed)) | 早期阶段代码复杂度增加 |
+| 如果Eth2.0出现问题，可以取回锁定的代币 | 不存在锁定风险，因此早期代码探索过程复杂 |
 
-Having a one-way bridge promises security, less complexity, but the lockup risk is significant as ether from Eth 1.0 is effectively burned. Transfers in phase 0 have been [disabled since version 0.6.0 of the spec](https://github.com/ethereum/eth2.0-specs/pull/965), with no current plans of being re-enabled. As resuming validator duties is tied to the transfer mechanism, this also means that if you decide to stop validating for a bit, you can't resume validating until such a time as the transfer functionality is implemented.
+单向桥接方案可以保证安全性，降低复杂性，但如果Eth 1.0中的ETH会被销毁，那么锁定风险确实非常大。自[v0.6.0版本规本](https://github.com/ethereum/eth2.0-specs/pull/965)公布以来，阶段0的转账功能已被禁用，且目前没有重新启用该功能的计划。恢复验证者职能与迁移机制相关，这意味着，一旦节点决定不再执行验证工作，就必须等到迁移功能实行后才能重新恢复验证者身份。
 
-Danny Ryan tells us more about why two-way bridge is not included in phase 0:
+Danny Ryan对于阶段0不实行双向桥接方案作出如下解释：
 
-"The more we encumber the 1.0 consensus with 2.0, the more we tie the development and fork processes which would likely slow down the shipping/iterating on 2.0. It is not technically infeasible. It would require 2.0 light clients to be run by all 1.0 clients and some changes to the 1.0 consensus rules allowing for a similar burn/receipt method in the opposite direction. If we were to create fungibility, the path would be \(1\) release 2.0 beacon chain, \(2\) once stable beacon chain and light clients exist then require 1.0 clients to be light clients of 2.0 and finalize 1.0 with 2.0 and expose beacon chain state root to 1.0 \(3\) add additional consensus rules to 1.0 and 2.0 to handle the reminting on 1.0 with proof of burn on 2.0.
+“越是将1.0与2.0的共识相提并论，就越会将开发和分叉联系在一起，这很可能会减慢2.0的迭代速度。虽然从技术上来说，这并非不可行。但是这将要求所有1.0客户端都运行2.0轻客户端，并且对1.0共识规则进行一些更改，以允许在相反方向上使用类似的ETH销毁和接收方法。如果想要实行双向桥接方案，我们采取的路径将会是：（1）发布2.0信标链；（2）一旦有了稳定的信标链和轻客户端，则要求1.0客户端成为2.0的轻客户端，并通过2.0最终确定1.0，并将信标链状态根提供给1.0；（3）在1.0和2.0上增加其他共识规则，从而借助2.0上的销毁证明（proof of burn）来应对1.0上的重复挖矿问题。
 
-I think it would be detrimental to 2.0 development to demand fungibility out the gate. Over time as light clients are released and we begin to finalize 1.0 with 2.0 if the community wants fungibility, then we can assess proposals then.
+我认为要求实行双向桥接方案不利于2.0的开发。但如果社区确实想要实行双向桥接方案，那么随着轻客户端逐渐推出，我们便开始通过2.0对1.0的节点进行最终确定，到那时我们就可以对提案进行评估了。
 
-...we can't prove things about the beacon chain until we force 1.0 clients to agree on the current state of the beacon chain \(thus the light client requirement\). That's why it logically falls after finalizing 1.0 if the community really wants it."
+除非1.0客户端就信标链的当前状态达成共识（因此要求1.0成为2.0轻客户端），否则我们无法证明信标链的可行性。这就是为什么从逻辑上来说，双向桥接方案会行不通。”
 
-Validators will also be able to sell their Eth 2.0 ether balance to another validator, presumably at some discount to the prevailing ether price due to the lock-up and risks. Nonetheless, anyone can exit with funds if they really need to.
-This is a nice feature that will hopefully encourage more participants to feel comfortable committing to staking.
+验证者还可以将他们的ETH2余额出售给其他验证者，由于需要将余额锁定在合约里以及具有一定的风险，售价大概会低于当前的ETH价格。但是，如果确实有需要的话，任何人都可以提取其资金。
+这是一个有价值的功能，有望鼓励更多的验证者放心地质押其ETH。
 
-Using BETH on shard chains (for smart contracts) will be available in phase 2.
-
-
-## State Migration
-
-### Old Proposal
-
-The old proposal is that in [phase 2](./eth-2.0-phases.md#phase-2-state-execution), the state of the current Eth 1.0 chain will be transferred into a shard on the Eth 2.0 chain. At this point, all information from the Eth 1.0 chain will be available on the Eth 2.0 chain.
-
-Currently Lighthouse is working upon a state transition [library](https://github.com/libp2p/go-libp2p-daemon).
-
-**Replacing EVM with eWASM?**
-
-Ethereum-flavoured web assembly is a deterministic smart contract execution engine built on the modern, standard WebAssembly virtual machine. It was first proposed in [EIP 48](https://github.com/ethereum/EIPs/issues/48). It may be the future execution engine for smart contracts on the Ethereum blockchain and is the primary candidate to replace EVM (the Ethereum virtual machine) as part of the phase 2 of Ethereum 2.0 roadmap.
-
-Buterin also thinks that the EVM should be retired soon and contracts should be on Ewasm with an EVM interpreter ([source](https://medium.com/ethereum-magicians/demystifying-the-road-to-ethereum-2-0-8130ade8d00f#a32b)).
-
-Since EVM makes use of 256-bit bytecode, smaller computations have to be converted to 256-bit strings before the EVM can process them.
-The WASM code, however, has been designed with production in mind. The elimination of precompiling is an added advantage for eWASM. WASM is an open standard \(backed by Google, Microsoft, Apple\) and because of this it will allow more programming languages \(C/C++, JS, Go\) to be used for smart contract development (Solidity included).
- 
-**Challenges of Old Proposal**
-
-* There are speculations that phase 2 might be divided into sub-forks and there will be a fork during/after phase 2 to bring in the Eth 1.0 state into a contract.
-
-* Before we migrate the state there's going to be validators earning rewards, and overall the cumulative issuance of ether will go up. So what will be the economics of ETH throughout?
+在阶段2，用户可以在分片链上使用BETH（用于智能合约中）。
 
 
-### New Proposal
+## 状态迁移
 
-An Alternative Proposal for early transition is proposed by Vitalik Buterin, Which is getting accepted by among the wider community.
+### 旧提案
 
-**Goals**
+旧提案计划在 [阶段2](./eth-2.0-phases.md#phase-2-state-execution)时，将当前Eth 1.0链的状态迁移到Eth 2.0链的分片中。那时，Eth 1.0链上的所有信息都将存储在Eth 2.0链上。
 
-* **Getting rid of PoW chain** & moving everything onto the beacon chain.
-* Development of Stateless clients.
+目前，Lighthouse正潜心于创建一个状态[迁移库](https://github.com/libp2p/go-libp2p-daemon)。
 
-**Stateless Client Features**
+**用eWASM替代EVM虚拟机？**
 
-* A pure function for verifying blocks and witnesses, Along with a method for generating witnesses for the block.
-* Available with multiple implementations.
-* Eth1-side protocol changes to bound witness size to ~1-2 MB.
-* Development of Stateless Clients requires much less rearchitecting to accomplish as it neither requires stateless miners or webassembly.
-* Stateless Client is an important feature for the switch as it stops the malicious actions, [according to Buterin](https://www.reddit.com/r/ethereum/comments/eemp28/vitalik_alternative_proposal_for_early_eth1_eth2/fbxon3w/?utm_source=share&utm_medium=web2x).
+Ethereum-flavoured web assembly（简称Ewasm）是一个确定性智能合约执行引擎，基于现代的标准WebAssembly虚拟机构建，在[EIP 48](https://github.com/ethereum/EIPs/issues/48)中首次提出。以太坊 2.0路线图阶段2提到，Ewasm是取代EVM（以太坊虚拟机）的主要候选者，未来可能充当以太坊区块链上智能合约的执行引擎。
 
-**New beacon chain features**
+Vitalik认为，EVM应该尽快退役，智能合约应该存在于Ewasm之中，并配置有EVM解释器（[来源链接](https://medium.com/ethereum-magicians/demystifying-the-road-to-ethereum-2-0-8130ade8d00f#a32b)）。
 
-* State root of the eth1 system transfers to the state of shard 0
-* New Validator list known as `eth1_friendly_validators` will be added. Any validator has the right to register themselves as eth1-friendly (and deregister) at any time.
-* The proposer on shard 0 at any given slot is chosen randomly out of the eth1-friendly validators.
-* Committee of shard 0 verifies the blocks of shard 0, which are expressed in this format `Block body(currently exists) & stateless client witness`. All the other shard committees verify their shard blocks, where they would only be verifying data availability, not the state execution, as shard 0 is the only shard that would be running computation.
+由于EVM使用256位字节码，因此EVM在处理它们之前，较小的计算必须转换为256位字符串。 然而，WASM代码在设计之初就考虑到了产品化。eWASM的另一个优势是去除了预编译环节。WASM是一个开放标准（由Google、Microsoft、Apple支持），因此，它将支持更多编程语言（比如C / C ++、JS、Go）用于智能合约开发（包括Solidity语言）。
 
-**Operation**
+**旧提案所面临的挑战**
 
-The eth1 system would “live” as shard 0 of eth2 (eventually, Will be one of the execution environments, but at the beginning, it can be the entire shard). Validators that want to participate in the eth1 system can register themselves as eth1-friendly validators and would be expected to maintain an eth1 full node in addition to their beacon node. The eth1 full node would download all blocks on shard 0 and maintain an updated full eth1 state.
+* 有猜测称阶段2可能会被划分为子分叉。在阶段2期间或之后会有一个分叉将Eth 1.0状态迁移至合约中。
 
-**Advantages of New Proposal over the Old Proposal**
+* 在我们实行状态迁移之前，将有验证者获得奖励，并且总体上来看，ETH的累计发行量将有所上升。 那么整个以太坊的经济状况将如何？
 
-* Earlier proposal transfers the whole Eth1.0 chain to Eth2 shard, but now it will get rid of PoW, which solves the challenges faced during the Old proposal. As instead of Miners there will eth1_friendly_validators to validate the blocks.
 
-* Development of Stateless Clients requires much less rearchitecting to accomplish.
+### 新提案
 
-According to Danny Ryan, the Eth2.0 lead:
-He thinks it only depends on a successful and stable phase 0 and Phase 1 release, which may be demonstrating the security instability.
+Vitalik Buterin提出了一项早期过渡的替代方案，该方案已被更广泛的社区所接受。
 
-Core developers: 
-They seem to be in the consensus of the Alternative Proposal and agreed that there is a decent amount of work to be done on the Eth1.x statelessness and is going to be a huge priority this year. But this approach is a much cleaner way for Eth1 to utilize the scalable data layer of Phase 1. There's a lot to learn and figure out before it comes into action but most of them seem positive about it. 
+**目标**
 
-It was made official that the 'Alternative proposal for early eth1 <-> eth2 merge' model will be followed for the switch and the transition would still be done using a procedure similar to the [eth1 -> eth2 transition](https://ethresear.ch/t/the-eth1-eth2-transition/6265).
+* **抛弃PoW链**，并将所有数据迁移至信标链。 
+* 开发无状态客户端。
+
+**无状态客户端特性**
+
+* 具备验证区块和见证（witnesses）的功能，以及生成区块见证的方式。
+* 提供多个实现版本。
+* 修改Eth1协议，使见证大小压缩至1~2MB。
+* 由于不需要无状态矿工或者webassembly，开发无状态客户端的工程量较少。
+* [Vitalik认为，](https://www.reddit.com/r/ethereum/comments/eemp28/vitalik_alternative_proposal_for_early_eth1_eth2/fbxon3w/?utm_source=share&utm_medium=web2x)无状态客户端是实现迁移过程中的一项重要功能，因为可以有效防止恶意行为。
+
+**新信标链特性**
+
+* Eth1的状态根迁移到分片0的状态
+* 将添加新验证者列表`eth1_friendly_validators`。任何验证者都有权随时注册为eth1友好验证者，并可以随时注销。
+* 在任何给定的slot中，从eth1友好验证者中随机抽出分片0提议者。
+* 分片0委员会验证其分片0区块，表示为`Block body(currently exists) & stateless client witness`。所有其他分片委员会都会验证其分片区块，但仅验证数据可用性，而非状态执行，因为分片0是唯一一个运行计算的分片。
+
+**运作**
+
+Eth1将充当eth2的分片0（最终将成为eth2执行环境之一）。有意愿参与到eth1系统的验证者可以注册为eth1友好验证者。除了自身信标链节点外，eth1友好验证者还应运行一个eth1全节点。 Eth1全节点将下载分片0上的所有区块，并持续更新eth1完整状态。
+
+**新提案的优势**
+
+* 旧提案将整个Eth1链迁移到Eth2分片上，而新提案将抛弃PoW，从而解决了旧提案所面临的挑战。将由`eth1_friendly_validators`代替矿工来验证区块。
+
+* 开发无状态客户端需要重新架构的部分较少。
+
+Eth2.0主要负责人Danny Ryan表示：成功实行状态迁移，仅取决于阶段0和阶段1能否顺利且稳定地推出，不然会导致安全性不稳定。
+
+至于核心开发者们的态度：他们似乎就替代提案（Alternative Proposal）达成共识，并表示在Eth1.x无状态方面尚需进行大量工作，从而将其列为今年的首要任务。但是对于Eth1来说，替代方案是一种利用阶段1可扩展数据层更纯粹的方法。在付诸行动之前，还有很多领域需要探索，但大多数人对此持积极态度。 
+
+官方表示，过渡方式将遵循“早期eth1 <-> eth2合并的替代方案”，并且迁移过程仍将与[eth1 -> eth2的迁移过程](https://ethresear.ch/t/the-eth1-eth2-transition/6265)类似。
