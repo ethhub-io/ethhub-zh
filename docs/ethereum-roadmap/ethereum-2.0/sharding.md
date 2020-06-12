@@ -56,7 +56,7 @@ ETH2.0的后续阶段将考虑跨分片通信的可能性。
 
 ## 参考资源
 
-* [分片FAQ](https://github.com/ethereum/wiki/wiki/Sharding-FAQ)](https://github.com/ethereum/wiki/wiki/Sharding-FAQ)
+* [分片FAQ](https://github.com/ethereum/wiki/wiki/Sharding-FAQ)
 * [分片路线图](https://github.com/ethereum/wiki/wiki/Sharding-roadmap)
 * [DCS不可能三角](https://blog.bigchaindb.com/the-dcs-triangle-5ce0e9e0f1dc)
 
