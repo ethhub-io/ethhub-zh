@@ -1,0 +1,1039 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Um guia para as fases e planos de implementação da Ethereum 2.0, que se chama Serenidade.">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-3.3.0">
+    
+    
+      
+        <title>Ethereum 2.0 Fases - EthHub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.63c76b3b.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.4637f1a4.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.962652e9.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../extra.css">
+    
+    
+      
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125892125-2"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125892125-2")</script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="ethhub" data-md-color-accent="">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#fases-da-ethereum-20" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="EthHub" class="md-header-nav__button md-logo">
+          
+            <img src="../../../logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                EthHub
+              </span>
+              <span class="md-header-nav__topic">
+                Ethereum 2.0 Fases - EthHub
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/ethhub-io/ethhub-zh/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      ethhub-io/ethhub-zh
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." title="首页" class="md-tabs__link md-tabs__link--active">
+        首页
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%9F%BA%E7%A1%80/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%98%AF%E4%BB%80%E4%B9%88/" title="以太坊基础" class="md-tabs__link">
+          以太坊基础
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../%E4%BB%A5%E5%A4%AA%E5%9D%8A2.0%E5%90%84%E9%98%B6%E6%AE%B5/" title="以太坊路线图" class="md-tabs__link">
+          以太坊路线图
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A/%E5%A6%82%E4%BD%95%E8%B4%AD%E4%B9%B0ETH/" title="使用以太坊" class="md-tabs__link">
+          使用以太坊
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="EthHub" class="md-nav__button md-logo">
+      
+        <img src="../../../logo.png" width="48" height="48">
+      
+    </a>
+    EthHub
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/ethhub-io/ethhub-zh/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      ethhub-io/ethhub-zh
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="首页" class="md-nav__link">
+      首页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%9F%BA%E7%A1%80/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%98%AF%E4%BB%80%E4%B9%88/" title="文档" class="md-nav__link">
+      文档
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://podcast.ethhub.io" title="播客" class="md-nav__link">
+      播客
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://ethhub.substack.com/" title="新闻" class="md-nav__link">
+      新闻
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://shop.ethhub.io" title="商城" class="md-nav__link">
+      商城
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      以太坊基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        以太坊基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%9F%BA%E7%A1%80/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%98%AF%E4%BB%80%E4%B9%88/" title="以太坊是什么？" class="md-nav__link">
+      以太坊是什么？
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%9F%BA%E7%A1%80/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E8%B4%A7%E5%B8%81%E6%94%BF%E7%AD%96/" title="以太坊货币政策" class="md-nav__link">
+      以太坊货币政策
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      以太坊路线图
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        以太坊路线图
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1" type="checkbox" id="nav-7-1">
+    
+    <label class="md-nav__link" for="nav-7-1">
+      以太坊 2.0
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-1">
+        以太坊 2.0
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E4%BB%A5%E5%A4%AA%E5%9D%8A2.0%E5%90%84%E9%98%B6%E6%AE%B5/" title="以太坊2.0各阶段" class="md-nav__link">
+      以太坊2.0各阶段
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%9D%83%E7%9B%8A%E8%AF%81%E6%98%8E/" title="以太坊权益证明" class="md-nav__link">
+      以太坊权益证明
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E4%BB%A5%E5%A4%AA%E5%9D%8A%E4%B8%AD%E7%9A%84%E5%88%86%E7%89%87/" title="以太坊中的分片" class="md-nav__link">
+      以太坊中的分片
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E4%BB%A5%E5%A4%AA%E5%9D%8A2.0%E7%BB%8F%E6%B5%8E%E5%AD%A6/" title="以太坊2.0经济学" class="md-nav__link">
+      以太坊2.0经济学
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E4%BB%8E%E4%BB%A5%E5%A4%AA%E5%9D%8A1.0%E8%BF%81%E7%A7%BB%E5%88%B0%E4%BB%A5%E5%A4%AA%E5%9D%8A2.0/" title="从以太坊1.0迁移到以太坊2.0" class="md-nav__link">
+      从以太坊1.0迁移到以太坊2.0
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E4%BB%A5%E5%A4%AA%E5%9D%8A1.x/" title="以太坊1.x" class="md-nav__link">
+      以太坊1.x
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-3" type="checkbox" id="nav-7-3">
+    
+    <label class="md-nav__link" for="nav-7-3">
+      Layer 2 扩容方案
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-3">
+        Layer 2 扩容方案
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../layer-2-%E6%89%A9%E5%AE%B9%E6%96%B9%E6%A1%88/zk-rollups/" title="ZK-Rollups" class="md-nav__link">
+      ZK-Rollups
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../layer-2-%E6%89%A9%E5%AE%B9%E6%96%B9%E6%A1%88/optimistic_rollups/" title="Optimistic Rollups" class="md-nav__link">
+      Optimistic Rollups
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      使用以太坊
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        使用以太坊
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A/%E5%A6%82%E4%BD%95%E8%B4%AD%E4%B9%B0ETH/" title="如何购买ETH" class="md-nav__link">
+      如何购买ETH
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A/%E8%BF%90%E8%A1%8C%E4%BB%A5%E5%A4%AA%E5%9D%8A%E8%8A%82%E7%82%B9/" title="运行以太坊节点" class="md-nav__link">
+      运行以太坊节点
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-3" type="checkbox" id="nav-8-3">
+    
+    <label class="md-nav__link" for="nav-8-3">
+      钱包
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-3">
+        钱包
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A/%E9%92%B1%E5%8C%85/%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%A4%AA%E5%9D%8A%E9%92%B1%E5%8C%85/" title="介绍以太坊钱包" class="md-nav__link">
+      介绍以太坊钱包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A/%E9%92%B1%E5%8C%85/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E9%92%B1%E5%8C%85/" title="以太坊智能合约钱包" class="md-nav__link">
+      以太坊智能合约钱包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A/%E9%92%B1%E5%8C%85/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A1%AC%E4%BB%B6%E9%92%B1%E5%8C%85/" title="以太坊硬件钱包" class="md-nav__link">
+      以太坊硬件钱包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A/%E9%92%B1%E5%8C%85/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%BB%E5%8A%A8%E9%92%B1%E5%8C%85/" title="以太坊移动钱包" class="md-nav__link">
+      以太坊移动钱包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A/%E9%92%B1%E5%8C%85/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%A1%8C%E9%9D%A2%E9%92%B1%E5%8C%85/" title="以太坊桌面钱包" class="md-nav__link">
+      以太坊桌面钱包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A/%E9%92%B1%E5%8C%85/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%BD%91%E9%A1%B5%E9%92%B1%E5%8C%85/" title="以太坊网页钱包" class="md-nav__link">
+      以太坊网页钱包
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" title="Introdução" class="md-nav__link">
+    Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metas-de-design" title="Metas de Design" class="md-nav__link">
+    Metas de Design
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fase-0-cadeia-de-beacon" title="Fase 0 - Cadeia de Beacon" class="md-nav__link">
+    Fase 0 - Cadeia de Beacon
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-esta-incluido" title="O que está incluído" class="md-nav__link">
+    O que está incluído
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eth2-o-novo-ether" title="ETH2: O Novo Ether" class="md-nav__link">
+    ETH2: O Novo Ether
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-sera-a-rede" title="Como será a rede?" class="md-nav__link">
+    Como será a rede?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fase-1-cadeias-de-fragmento" title="Fase 1 - Cadeias de Fragmento" class="md-nav__link">
+    Fase 1 - Cadeias de Fragmento
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-esta-incluido_1" title="O que está incluído" class="md-nav__link">
+    O que está incluído
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-sera-a-rede_1" title="Como será a rede?" class="md-nav__link">
+    Como será a rede?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consideracoes-importantes" title="Considerações importantes" class="md-nav__link">
+    Considerações importantes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fase-2-execucao-do-estado" title="Fase 2 - Execução do estado" class="md-nav__link">
+    Fase 2 - Execução do estado
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-esta-incluido_2" title="O que está incluído?" class="md-nav__link">
+    O que está incluído?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consideracoes-importantes_1" title="Considerações importantes" class="md-nav__link">
+    Considerações importantes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-vem-depois" title="O que vem depois?" class="md-nav__link">
+    O que vem depois?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos" title="Recursos" class="md-nav__link">
+    Recursos
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ethhub-io/ethhub-zh/edit/master/docs/以太坊路线图/以太坊-2.0/eth-2.0-phases-portuguese.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="fases-da-ethereum-20">Fases da Ethereum 2.0</h1>
+<p><em>Como Ethereum 2.0 está em intensa pesquisa e desenvolvimento, essa página pode se tornar obsoleta a qualquer momento. É mantida atualizada com base nos melhores esforços.</em></p>
+<h2 id="introducao">Introdução</h2>
+<p>A grande atualização da rede Ethereum, chamada Ethereum 2.0, Eth2 ou Serenity, trará com ela Sharding, Proof Stake, uma nova máquina virtual (eWASM) e muito mais. É importante entender que esta atualização não ocorrerá em um único momento - em vez disso, será implantada por fases. Este documento tenta ser um ponto de referência para estas fases e o que cada uma inclui.</p>
+<h2 id="metas-de-design">Metas de Design</h2>
+<p>O pesquisador de Ethereum Danny Ryan tem <a href="https://github.com/ethereum/eth2.0-specs#design-goals">estipulado</a> 5 objetivos de design distintos para a Ethereum 2.0:</p>
+<ul>
+<li>Descentralização: para permitir um laptop de um usuário típico processar/validar fragmentos (incluindo qualquer validação de nível de sistema de uma cadeia de beacons).</li>
+<li><strong>Resiliência:</strong> para permanecer online através de grandes partições de rede e mesmo quando partes muito grandes de nós ficam offline.</li>
+<li><strong>Segurança:</strong> para utilizar técnicas de criptografia e design que permitam uma grande participação de validadores no total e por hora unitária.</li>
+<li><strong>Simplicidade:</strong> para minimizar a complexidade, mesmo que ao custo de algumas perdas de eficiência.</li>
+<li><strong>Longevy:</strong> para selecionar todos os componentes como eles são ou quânticos seguros ou podem ser facilmente cambiados para contrapartes quânticas seguras quando disponíveis.</li>
+</ul>
+<h2 id="fase-0-cadeia-de-beacon">Fase 0 - Cadeia de Beacon</h2>
+<h3 id="o-que-esta-incluido"><strong>O que está incluído</strong></h3>
+<p>Fase 0 é o nome dado para o lançamento da Cadeia de Beacon. A Cadeia de Beacon gerenciará o protocolo de Proof of Stake Casper e todas as suas cadeias de fragmentos. Como Ben Edgington <a href="https://media.consensys.net/state-of-ethereum-protocol-2-the-beacon-chain-c6b6a9a69129">escreve </a>, "Há uma série de aspectos para isso: gerenciar validadores e suas participações; nomeando o bloco escolhido proponente para cada fragmento em cada etapa; organizando validadores em comitês para votar nos blocos propostos; aplicação das regras de consenso; aplicação de recompensas e sanções aos validadores; e, ser um ponto de referência em que os fragmentos registam os seus estados para facilitar transações cruzadas.”</p>
+<p>A fonte primária de carga na Cadeia de Beacon será "atestações". Atestações são votos disponíveis para um bloco de fragmentos e, simultaneamente, provas de pontos de interesse para um bloco de beacon. Um número suficiente de atestações para o mesmo bloco de fragmentos irá criar um "cruzamento" que confirma o segmento do fragmento até aquele bloco de fragmento na Cadeia de Beacon.</p>
+<p>A Fase 0 irá usar o Gadget de Finalidade Amigável (Casper the Friendly Finality Gadget - FFG) para esta finalidade. A finalidade, em termos muito vagos, significa que, uma vez concluída uma determinada operação, esta ficará para sempre gravado na história e nada pode reverter essa operação.</p>
+<h4 id="eth2-o-novo-ether"><strong>ETH2: O Novo Ether</strong></h4>
+<p>Fase 0 irá introduzir o ETH2 que será um novo ativo para acionistas (validadores) para ser usado na Cadeia de Beacon. Ele será criado utilizando dois métodos:</p>
+<ul>
+<li>Como recompensa por validar a Cadeia de Beacon (e fragmentos após a Fase 1).</li>
+<li>Comprá-lo para 1 ETH por qualquer usuário ETH1.X através de um <a href="https://github.com/ethereum/beacon_chain/blob/master/contracts/validator_registration.v.py">contrato de registro</a>. O contrato refere-se a ele como um depósito.</li>
+</ul>
+<p>Atualmente não há nenhuma maneira de retirar ou transferir ETH2 da Cadeia de Sinalizador na Fase 0. Uma vez depositado no contrato de registo de validador ETH1.x, o ETH1 é efetivamente queimado. Os validadores da Cadeia de Beacons assistem a este contrato e enviam informações de depósito à Cadeia de Beacons, que então emitem ETH2 aos depositantes.</p>
+<p>Por último, a Cadeia de Beacon irá gerar uma boa qualidade (distribuída, verificável, imprevisível e (razoavelmente) aleatória) para o resto do sistema. Ela usará RANDAO que é simplesmente uma maneira de combinar contribuições (números aleatórios individuais) fornecidas por muitos participantes em um único número de saída.</p>
+<p>Isso será usado para organizar validadores em proponentes e comites de blocos.</p>
+<h3 id="como-sera-a-rede"><strong>Como será a rede?</strong></h3>
+<p>Quando a Fase 0 estiver completa, haverá duas cadeias Ethereum ativas. Por uma questão de clareza, vamos chamá-las de rede ETH1 (atual, rede principal usando PoW) e de ETH2 (a nova rede de Cadeia de Beacons). Durante esta fase, os usuários poderão migrar seu ETH da rede Eth1 para a rede de Eth2 e tornar-se validadores. No entanto, eles NÃO conseguirão migrar estes ETH de volta (por enquanto). A razão pela qual alguém pode querer fazer isto é porque ele pode ganhar juros pagos pelo ETH na rede de Eth2.</p>
+<p>Para executar a Cadeia de Beacons, você vai precisar de um cliente da rede da Cadeia de Beacons. Estes estão sendo desenvolvidos separadamente do conjunto de clientes Ethereum padrão (Geth, Parity, Pantheon, etc) por um número de <a href="/ethereum-roadmap/ethereum-2.0/eth2.0-teams/teams-building-eth2.0/">equipes</a>. A maioria das equipes está publicando atualizações periódicas sobre o progresso do desenvolvimento de seus clientes e algumas das equipes estão oferecendo recompensas aos colaboradores para incluir cada vez mais desenvolvedores na construção do Ethereum 2.0 . Você pode contribuir com doações no Gitcoin <a href="https://gitcoin.co/grants/">aqui</a></p>
+<p>Por si só, a Cadeia de Beacons pode não parecer particularmente útil. Mas, como primeiro componente da Ethereum 2.0 a ser entregue, é a base de todo o sistema.</p>
+<p><strong>Considerações importantes</strong></p>
+<ul>
+<li>ETH2 é transferível para e de fragmentos assim que a Fase 2 estiver completa (embora isso possa mudar no futuro).</li>
+<li>Haverá uma quantidade mínima de ETH em depósito necessária para a inicialização inicial da cadeia de sinalizadores. Isto é definido como <code>CHAIN_START_FUL_DEPOSIT_THRESHOLD</code> no <a href="https://github.com/ethereum/deposit_contract/blob/master/deposit_contract/contracts/validator_registration.v.py#L3">contrato de depósito que estará ativo na rede Eth 1.0</a>.</li>
+<li>Para se tornar um validador, você precisará depositar 32 ETH2.</li>
+<li>Durante a fase 0, todas as transações de usuário e computação de contratos inteligentes ainda ocorrerão na rede Eth1.</li>
+</ul>
+<h2 id="fase-1-cadeias-de-fragmento">Fase 1 - Cadeias de Fragmento</h2>
+<h3 id="o-que-esta-incluido_1">O que está incluído</h3>
+<p>As cadeias de fragmentos são chave para a futura escalabilidade já que permitem transações em paralelo, e haverá 64 delas implantadas na Fase 1 (com a opção de adicionar mais ao longo do tempo).</p>
+<p>A fase 1 está principalmente preocupada com a construção, validade e consenso sobre os dados destas cadeias de fragmentos. Fase 1 não especifica o estado da execução da cadeia de fragmentos ou os saldos da conta. Será como uma execução experimental para a estrutura de compartilhamento ao invés de uma tentativa de usar fragmentos em escala. A Cadeia de Beacon tratará os blocos da cadeia de fragmentos como simples coleções de bits sem estrutura ou significado.</p>
+<p><strong>Crosslinks</strong> <br/> Periodicamente, o estado atual (a "combinação de dados root") de cada fragmento é gravado em um bloco de Cadeia de Beacon como uma ligação cruzada. Quando o bloco de Cadeia de Beacon for finalizado, o bloco de fragmento correspondente é considerado finalizado, e outros fragmentos sabem que podem confiar nisso para transações cruzadas. <br/></p>
+<p>Links cruzados são um conjunto de assinaturas de um comite atestando um bloco em uma cadeia de fragmentos que pode ser incluído na Cadeia de Beacon. Links cruzados são os principais meios pelos quais a Cadeia de Beacon "aprende sobre" o estado atualizado das cadeias de fragmentos. Os Links Cruzados também servem como infraestrutura para uma comunicação assíncrona entre cadeias de fragmentos.</p>
+<p>Validadores da cadeia de fragmentos, que são selecionados aleatoriamente pela Cadeia de Beacons para cada fragmento em cada segmento, meramente chegam a um acordo sobre o conteúdo de cada bloco. Eles atestam o conteúdo e o estado através de uma ligação cruzada. Não importa qual informação aparece nos blocos de fragmentos, desde que todas as comissões cheguem a consenso e atualizem a Cadeia de Beacon no fragmento regularmente.</p>
+<h3 id="como-sera-a-rede_1">Como será a rede?</h3>
+<p>As cadeias Eth1 e Eth2 ainda funcionarão em paralelo após a fase 1.</p>
+<h3 id="consideracoes-importantes">Considerações importantes</h3>
+<ul>
+<li>Na fase 0, 1 e 2, a rede principal PoW (Eth1) continuará ativa enquanto se realizam testes e a transição estiver ocorrendo para a rede Eth2. Isto significa que as recompensas serão pagas aos validadores do Ethereum 2.0, bem como as recompensas normais de blocos PoW. Por conseguinte, a inflação combinada das duas cadeias pode disparar inicialmente, mas depois começará a ter tendência para a faixa dos 0-1%, à medida que a cadeia PoW for gradualmente "desenfatizada".</li>
+</ul>
+<h2 id="fase-2-execucao-do-estado">Fase 2 - Execução do estado</h2>
+<h3 id="o-que-esta-incluido_2">O que está incluído?</h3>
+<p>A Fase 2 é onde a funcionalidade de todo o sistema começará a reunir-se. A transição de uma cadeia de fragmentos de simples containers de dados para uma cadeia de dados estruturados e com Contratos Inteligentes será reintroduzida. Cada fragmento irá gerenciar uma máquina virtual baseada em <a href="https://github.com/ewasm/design">eWASM</a>. Ele suportará contas, contratos, estado e outras abstrações que estamos familiarizados do Solidity. Podemos esperar ferramentas familiares como truffle, solc, ganache portado para suportar o eWASM antes ou durante a fase 2.</p>
+<p>A Fase 2 também introduz o conceito de 'Ambientes de Execução' (EEs). EEs dentro de um fragmento podem ser construídos da forma que um desenvolvedor considerar adequada - pode haver um EE para uma cadeia de estilo UTXO, um sistema ao estilo Libra, um EE para um fornecedor de taxas de mercado e além. Todo fragmento tem acesso a todos os ambientes de execução e tem a capacidade de fazer transações dentro deles, além de executar e interagir com contratos inteligentes. Observe que o conceito de ambiente de execução ainda está em grande análise e desenvolvimento.</p>
+<h3 id="consideracoes-importantes_1">Considerações importantes</h3>
+<ul>
+<li>Um dApp terá que escolher em qual fragmento quer estar. Essa decisão é importante porque a comunicação cruzada difere no Eth2, uma vez que não é síncrona, o que significa que se perde alguma composabilidade entre fragmentos<br/></li>
+<li>Um dApp teria que ter dados bastante grandes para consumir todos os recursos em um dado fragmento para justificar se espalhar por vários deles.<br/></li>
+<li>Esta fase vai dar fragmentos com eWASM como o EVM 2.0.</li>
+<li>É uma pergunta em aberto quando e como as contas e contratos da Ethereum 1.0 serão migrados para a Ethereum 2.0. Existem alguns <a href="https://ethresear.ch/t/the-eth1-eth2-transition/6265">planos de atualização</a></li>
+</ul>
+<h2 id="o-que-vem-depois">O que vem depois?</h2>
+<p>O roteiro da cadeia de fragmentos de acordo com a wiki oficial sugere 6 fases. O pesquisador Justin Drake acredita firmemente que as fases de compartilhamento 1 e 2 virão em 2020 e 2021, respectivamente (assumindo que a Cadeia do Beacon inicia no começo de 2020). <br/></p>
+<p>A partir da fase 3, qualquer especulação feita é sujeita a mudanças, você pode ir verificar a <a href="https://github.com/ethereum/wiki/wiki/Sharding-roadmap#phase-3-light-client-state-protocol">wiki</a> para mais informações sobre a fase.</p>
+<h2 id="recursos">Recursos</h2>
+<ul>
+<li><a href="https://hackmd.io/e4cNiocFTiS67j6yJ_XHPw?view">Informações da Ethereum 2.0</a></li>
+<li><a href="https://github.com/ethereum/eth2.0-specs">Especificações da Ethereum 2.0</a></li>
+<li><a href="https://notes.ethereum.org/jDcuUp3-T8CeFTv0YpAsHw?view">Fase 0 para Humanos</a></li>
+<li><a href="https://github.com/ethereum/wiki/wiki/Sharding-roadmap#strongphase-3strong-light-client-state-protocol">Roadmap para a cadeia de fragmentos</a></li>
+<li><a href="https://media.consensys.net/state-of-ethereum-protocol-2-the-beacon-chain-c6b6a9a69129">Estado do protocolo Ethereum</a></li>
+<li><a href="https://media.consensys.net/exploring-the-ethereum-2-0-design-goals-fd2d901b4c01">Objetivos do Ethereum 2.0</a></li>
+<li><a href="https://medium.com/ethereum-magicians/demystifying-the-road-to-ethereum-2-0-8130ade8d00f">Sessão de perguntas e respostas do ETHMagicians</a></li>
+<li><a href="https://www.coindesk.com/open-heart-surgery-inside-ethereums-crucial-replacement-of-the-evm">eWASM</a></li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        <a href="https://etherscan.io/address/0xa19fcdad77c1f0fd184689aca88babcf68010347">Donate: 0xA19FCDaD77C1F0fd184689aca88BabCF68010347</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/ethhub-io/ethhub" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/ethhub_io" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://medium.com/ethhub" class="md-footer-social__link fa fa-medium"></a>
+    
+      <a href="https://discordapp.com/invite/gw8AM98" class="md-footer-social__link fa fa-comment"></a>
+    
+      <a href="https://www.instagram.com/ethhub_io/" class="md-footer-social__link fa fa-instagram"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.3a8f445d.js"></script>
+      
+      <script>app.initialize({version:"1.1.2",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>

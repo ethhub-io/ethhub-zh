@@ -1,0 +1,1118 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Commit-chains a layer 2 scaling solution for Ethereum.">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-3.3.0">
+    
+    
+      
+        <title>Commit-Chains - EthHub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.63c76b3b.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.4637f1a4.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.962652e9.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../extra.css">
+    
+    
+      
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125892125-2"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125892125-2")</script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="ethhub" data-md-color-accent="">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#commit-chains" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="EthHub" class="md-header-nav__button md-logo">
+          
+            <img src="../../../logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                EthHub
+              </span>
+              <span class="md-header-nav__topic">
+                Commit-Chains - EthHub
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/ethhub-io/ethhub-zh/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      ethhub-io/ethhub-zh
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." title="首页" class="md-tabs__link md-tabs__link--active">
+        首页
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%9F%BA%E7%A1%80/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%98%AF%E4%BB%80%E4%B9%88/" title="以太坊基础" class="md-tabs__link">
+          以太坊基础
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../%E4%BB%A5%E5%A4%AA%E5%9D%8A-2.0/%E4%BB%A5%E5%A4%AA%E5%9D%8A2.0%E5%90%84%E9%98%B6%E6%AE%B5/" title="以太坊路线图" class="md-tabs__link">
+          以太坊路线图
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A/%E5%A6%82%E4%BD%95%E8%B4%AD%E4%B9%B0ETH/" title="使用以太坊" class="md-tabs__link">
+          使用以太坊
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="EthHub" class="md-nav__button md-logo">
+      
+        <img src="../../../logo.png" width="48" height="48">
+      
+    </a>
+    EthHub
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/ethhub-io/ethhub-zh/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      ethhub-io/ethhub-zh
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="首页" class="md-nav__link">
+      首页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%9F%BA%E7%A1%80/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%98%AF%E4%BB%80%E4%B9%88/" title="文档" class="md-nav__link">
+      文档
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://podcast.ethhub.io" title="播客" class="md-nav__link">
+      播客
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://ethhub.substack.com/" title="新闻" class="md-nav__link">
+      新闻
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://shop.ethhub.io" title="商城" class="md-nav__link">
+      商城
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      以太坊基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        以太坊基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%9F%BA%E7%A1%80/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%98%AF%E4%BB%80%E4%B9%88/" title="以太坊是什么？" class="md-nav__link">
+      以太坊是什么？
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%9F%BA%E7%A1%80/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E8%B4%A7%E5%B8%81%E6%94%BF%E7%AD%96/" title="以太坊货币政策" class="md-nav__link">
+      以太坊货币政策
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      以太坊路线图
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        以太坊路线图
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1" type="checkbox" id="nav-7-1">
+    
+    <label class="md-nav__link" for="nav-7-1">
+      以太坊 2.0
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-1">
+        以太坊 2.0
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E4%BB%A5%E5%A4%AA%E5%9D%8A-2.0/%E4%BB%A5%E5%A4%AA%E5%9D%8A2.0%E5%90%84%E9%98%B6%E6%AE%B5/" title="以太坊2.0各阶段" class="md-nav__link">
+      以太坊2.0各阶段
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E4%BB%A5%E5%A4%AA%E5%9D%8A-2.0/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%9D%83%E7%9B%8A%E8%AF%81%E6%98%8E/" title="以太坊权益证明" class="md-nav__link">
+      以太坊权益证明
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E4%BB%A5%E5%A4%AA%E5%9D%8A-2.0/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E4%B8%AD%E7%9A%84%E5%88%86%E7%89%87/" title="以太坊中的分片" class="md-nav__link">
+      以太坊中的分片
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E4%BB%A5%E5%A4%AA%E5%9D%8A-2.0/%E4%BB%A5%E5%A4%AA%E5%9D%8A2.0%E7%BB%8F%E6%B5%8E%E5%AD%A6/" title="以太坊2.0经济学" class="md-nav__link">
+      以太坊2.0经济学
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E4%BB%A5%E5%A4%AA%E5%9D%8A-2.0/%E4%BB%8E%E4%BB%A5%E5%A4%AA%E5%9D%8A1.0%E8%BF%81%E7%A7%BB%E5%88%B0%E4%BB%A5%E5%A4%AA%E5%9D%8A2.0/" title="从以太坊1.0迁移到以太坊2.0" class="md-nav__link">
+      从以太坊1.0迁移到以太坊2.0
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E4%BB%A5%E5%A4%AA%E5%9D%8A1.x/" title="以太坊1.x" class="md-nav__link">
+      以太坊1.x
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-3" type="checkbox" id="nav-7-3">
+    
+    <label class="md-nav__link" for="nav-7-3">
+      Layer 2 扩容方案
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-3">
+        Layer 2 扩容方案
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../zk-rollups/" title="ZK-Rollups" class="md-nav__link">
+      ZK-Rollups
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../optimistic_rollups/" title="Optimistic Rollups" class="md-nav__link">
+      Optimistic Rollups
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      使用以太坊
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        使用以太坊
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A/%E5%A6%82%E4%BD%95%E8%B4%AD%E4%B9%B0ETH/" title="如何购买ETH" class="md-nav__link">
+      如何购买ETH
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A/%E8%BF%90%E8%A1%8C%E4%BB%A5%E5%A4%AA%E5%9D%8A%E8%8A%82%E7%82%B9/" title="运行以太坊节点" class="md-nav__link">
+      运行以太坊节点
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-3" type="checkbox" id="nav-8-3">
+    
+    <label class="md-nav__link" for="nav-8-3">
+      钱包
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-3">
+        钱包
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A/%E9%92%B1%E5%8C%85/%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%A4%AA%E5%9D%8A%E9%92%B1%E5%8C%85/" title="介绍以太坊钱包" class="md-nav__link">
+      介绍以太坊钱包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A/%E9%92%B1%E5%8C%85/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E9%92%B1%E5%8C%85/" title="以太坊智能合约钱包" class="md-nav__link">
+      以太坊智能合约钱包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A/%E9%92%B1%E5%8C%85/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A1%AC%E4%BB%B6%E9%92%B1%E5%8C%85/" title="以太坊硬件钱包" class="md-nav__link">
+      以太坊硬件钱包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A/%E9%92%B1%E5%8C%85/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%BB%E5%8A%A8%E9%92%B1%E5%8C%85/" title="以太坊移动钱包" class="md-nav__link">
+      以太坊移动钱包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A/%E9%92%B1%E5%8C%85/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%A1%8C%E9%9D%A2%E9%92%B1%E5%8C%85/" title="以太坊桌面钱包" class="md-nav__link">
+      以太坊桌面钱包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A/%E9%92%B1%E5%8C%85/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%BD%91%E9%A1%B5%E9%92%B1%E5%8C%85/" title="以太坊网页钱包" class="md-nav__link">
+      以太坊网页钱包
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-commit-chains" title="What are commit-chains?" class="md-nav__link">
+    What are commit-chains?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-commit-chains-work" title="How do commit-chains work?" class="md-nav__link">
+    How do commit-chains work?
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#periodic-checkpoint-commitments" title="Periodic Checkpoint Commitments" class="md-nav__link">
+    Periodic Checkpoint Commitments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-availability-requirement" title="Data Availability Requirement" class="md-nav__link">
+    Data Availability Requirement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#centralized-but-untrusted-intermediary" title="Centralized but Untrusted Intermediary" class="md-nav__link">
+    Centralized but Untrusted Intermediary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-finality" title="Transaction Finality" class="md-nav__link">
+    Transaction Finality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduced-routing-requirements" title="Reduced Routing Requirements" class="md-nav__link">
+    Reduced Routing Requirements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-chain-security-properties" title="Commit-chain security properties" class="md-nav__link">
+    Commit-chain security properties
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agreed-transition" title="Agreed transition" class="md-nav__link">
+    Agreed transition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#balance-security" title="Balance security" class="md-nav__link">
+    Balance security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-progression" title="State progression" class="md-nav__link">
+    State progression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commitment-integrity" title="Commitment integrity" class="md-nav__link">
+    Commitment integrity
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nocust-commit-chain" title="NOCUST commit-chain" class="md-nav__link">
+    NOCUST commit-chain
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#free-establishment" title="Free establishment" class="md-nav__link">
+    Free establishment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agreed-transition_1" title="Agreed transition" class="md-nav__link">
+    Agreed transition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instant-transaction-finality" title="Instant transaction finality" class="md-nav__link">
+    Instant transaction finality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commitment-integrity_1" title="Commitment integrity" class="md-nav__link">
+    Commitment integrity
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparing-commit-chains" title="Comparing commit-chains" class="md-nav__link">
+    Comparing commit-chains
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" title="Resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ethhub-io/ethhub-zh/edit/master/docs/以太坊路线图/layer-2-扩容方案/commit-chains.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="commit-chains">Commit-Chains</h1>
+<h2 id="what-are-commit-chains">What are commit-chains?</h2>
+<p>Commit-chains are the generic term for what is also called 'Plasma' - a layer 2 scaling solution for Ethereum and other blockchains. </p>
+<p>Vitalik Buterin has jokingly said, 
+<em>"Commit chains" is more on-brand for bitcoin whereas "plasma" is more on-brand for ethereum.</em></p>
+<p>Commit-chains, also sometimes described as non-custodial side chains, don’t introduce a new consensus mechanism like side chains - they rely on the parent-blockchains consensus which makes them as safe as the parent-blockchain itself. </p>
+<p>In commit-chains, untrusted and non-custodial operators facilitate the communication between transacting parties. The operator is expected to commit the state of user account balances by sending periodic updates to the parent-blockchain.</p>
+<h2 id="how-do-commit-chains-work">How do commit-chains work?</h2>
+<p><img alt="" src="https://i.imgur.com/9ekBVjB.png" /></p>
+<p>Unlike payment channels, commit-chains are on an always ongoing state once launched and don’t rely on a three-state - opening, live, dispute/closure - model.</p>
+<p>After an operator launches a commit-chain, users can join and conduct transactions that are recorded on the commit-chain while keeping the freedom to withdraw or exit their assets to the parent-blockchain at any time.</p>
+<h3 id="periodic-checkpoint-commitments">Periodic Checkpoint Commitments</h3>
+<p>Commit-chain users may need to periodically observe on-chain checkpoint commitments, which can be instantiated as a Merkle tree root or Zero-Knowledge Proof (ZKP). </p>
+<p>While ZKPs enforce consistent state transitions on-chain, Merkle root commitments do not, requiring users to participate in challenge-response protocols to challenge operator misbehavior.</p>
+<h3 id="data-availability-requirement">Data Availability Requirement</h3>
+<p>Users must retrieve and maintain data required to exit a commit-chain since data isn’t broadcasted.</p>
+<p>Depending on the implementation, if the data is unavailable, you are either forced to exit (like in Plasma) or the operator can be challenged to provide the necessary data (like in NOCUST). </p>
+<p>On misbehavior, users are allowed to exit with their last confirmed balance.</p>
+<h3 id="centralized-but-untrusted-intermediary">Centralized but Untrusted Intermediary</h3>
+<p>The centralized operator never holds custody of funds so if the operator is not available the worst-case scenario is that users are just unable to make any further off-chain transactions, but they can exit and move to another commit-chain at any time.</p>
+<h3 id="transaction-finality">Transaction Finality</h3>
+<p>Unlike payment channels, the commit-chain operator does not require on-chain collateral to securely route payments between users.</p>
+<p>Commit-chain transactions do not offer instant transaction finality like payment channels but offer eventual finality after an on-chain checkpoint. </p>
+<p>However, if an operator chooses to allocate collateral to each user, essentially implementing a payment channel on top of a commit-chain, instant transaction finality becomes possible.</p>
+<h3 id="reduced-routing-requirements">Reduced Routing Requirements</h3>
+<p>A single commit-chain can potentially host millions of users, so a few statically connected commit-chains are envisioned to spawn stable networks with low routing complexity. Atomic cross commit-chain transactions have not been proposed yet.</p>
+<h2 id="commit-chain-security-properties">Commit-chain security properties</h2>
+<p>The user-side security properties can be generalized as follows:</p>
+<h3 id="agreed-transition">Agreed transition</h3>
+<p>A commit-chain transaction is agreed by at least the sender and the commit-chain operator.</p>
+<h3 id="balance-security">Balance security</h3>
+<p>Honest users can always withdraw agreed balances from the commit-chain with an on-chain dispute.</p>
+<p>Balance security is provided for honest users even if the operator and all other commit-chain users collude since transactions are only considered final when the sender and operator agree to the payment and it’s committed with the periodic on-chain checkpoint.</p>
+<h3 id="state-progression">State progression</h3>
+<p>Users can, at any time, enforce an off-chain state transition on-chain.</p>
+<h3 id="commitment-integrity">Commitment integrity</h3>
+<p>Since there isn’t a fixed 3-phase lifetime for a commit-chain, users of the commit-chain are able to verify the integrity of the operator’s commitments at any point in time and force the operator to seize operation and rollback to the previous periodic commitment.</p>
+<h2 id="nocust-commit-chain">NOCUST commit-chain</h2>
+<h3 id="overview">Overview</h3>
+<p>The concept of 'NOCUST commit-chains' was first introduced by the team at <a href="https://liquidity.network/">Liquidity Network</a> and their peers in the form of an <a href="https://eprint.iacr.org/2018/642.pdf">academic paper</a>.</p>
+<p>NOCUST is an account-based commit-chain where an on-chain address is associated to a commit-chain account.</p>
+<p>The NOCUST on-chain contract expects to periodically receive a constant-sized commitment to the state of the commit-chain ledger from the operator containing each user’s account in the collateral pool.</p>
+<h3 id="free-establishment">Free establishment</h3>
+<p>Users can deposit any amount of coins within the contract and perform commit-chain payment of any denomination towards other users and with free establishment, users can join the commit-chain without on-chain transaction by requesting an operator signature and immediately receive commit-chain transactions.</p>
+<h3 id="agreed-transition_1">Agreed transition</h3>
+<p>A transaction within NOCUST is enacted with the signature of the sender and the operator to deter potential double-spend scenarios.</p>
+<h3 id="instant-transaction-finality">Instant transaction finality</h3>
+<p>State progression is only possible if the operator stakes collateral towards the recipient. NOCUST specifies a mechanism to allocate collateral towards all commit-chain users within a constant-size on-chain commitment, which enables instant transaction finality for specified amounts.</p>
+<p>Allocated collateral is reusable after each on-chain checkpoint and at this point, the transaction throughput is only limited by the operator’s bandwidth and computational throughput - independent of checkpoint commitment interval.</p>
+<h3 id="commitment-integrity_1">Commitment integrity</h3>
+<p>Each user is only required to verify their own balance proof by requesting data from the operator and comparing it with their locally stored state at regular time intervals to observe integrity. </p>
+<p>In the case of misbehavior, a user can issue a challenge using the NOCUST smart contract. If the operator comes back with invalid information or does not respond, users have an accountable proof of misbehavior. </p>
+<p>NOCUST supports a provably consistent mode of operation through zkSNARKS. Layer two-state transitions will be validated by the underlying smart contract and the operator is unable to commit invalid state transition without being halted.</p>
+<h2 id="comparing-commit-chains">Comparing commit-chains</h2>
+<p>Comparing NOCUST commit-chain with Plasma Cash, which is the most comprehensive working draft of a Plasma implementation.</p>
+<p>Comparison data is based on the <a href="https://eprint.iacr.org/2019/360.pdf">systemization of knowledge academic paper</a> and sourced from discussions with <a href="https://twitter.com/gakonst?lang=en">Georgios Konstantopoulos</a>.</p>
+<table>
+<thead>
+<tr>
+<th>General properties</th>
+<th>Plasma Cash</th>
+<th>NOCUST</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Security Proofs</td>
+<td>✕</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Offline transaction reception</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Fungible payments</td>
+<td>✕</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Clients can remain offline</td>
+<td>✕</td>
+<td>✕ (online each eon)</td>
+</tr>
+<tr>
+<td>Safe mass exit</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Instant transaction finality</td>
+<td>✕</td>
+<td>✓ (with collateral)</td>
+</tr>
+<tr>
+<td>Token support</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Non-fungible tokens</td>
+<td>✓</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>Provably consistent state (ZKP)</td>
+<td>✕</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Commit-chain swaps</td>
+<td>✕</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<p>Plasma is a UTXO-based commit-chain while NOCUST is account-based. </p>
+<p>In Plasma Cash, a coin is minted with an on-chain deposit and cannot be merged or split with another coin on the commit-chain, hence it is useful for non-fungible tokens but not practical as a payment system.</p>
+<p>NOCUST uses ZKPs to enforce consistent state transitions on-chain, Plasma Cash uses Merkle root commitments, which do not and require users to participate in challenge-response protocols to challenge operator misbehavior.</p>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://eprint.iacr.org/2018/642.pdf">Commit-Chains: Secure, Scalable Off-Chain Payments Academic Paper</a></li>
+<li><a href="https://eprint.iacr.org/2019/360.pdf">Systemization of Knowledge: Off The Chain Transactions Academic Paper</a></li>
+<li><a href="https://liquidity.network/research">Liquidity Network Research Papers</a></li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        <a href="https://etherscan.io/address/0xa19fcdad77c1f0fd184689aca88babcf68010347">Donate: 0xA19FCDaD77C1F0fd184689aca88BabCF68010347</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/ethhub-io/ethhub" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/ethhub_io" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://medium.com/ethhub" class="md-footer-social__link fa fa-medium"></a>
+    
+      <a href="https://discordapp.com/invite/gw8AM98" class="md-footer-social__link fa fa-comment"></a>
+    
+      <a href="https://www.instagram.com/ethhub_io/" class="md-footer-social__link fa fa-instagram"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.3a8f445d.js"></script>
+      
+      <script>app.initialize({version:"1.1.2",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>
