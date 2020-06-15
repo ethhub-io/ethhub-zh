@@ -35,29 +35,29 @@ google_analytics:
   - 'auto'
 
 nav:
-- Home: 'index.md'
-- Docs: 'ethereum-basics/what-is-ethereum.md'
-- Podcast: 'https://podcast.ethhub.io'
-- Newsletter: 'https://ethhub.substack.com/'
-- Shop: 'https://shop.ethhub.io'
-- Ethereum Basics:
+- 首页: 'index.md'
+- 文档: 'ethereum-basics/what-is-ethereum.md'
+- 播客: 'https://podcast.ethhub.io'
+- 新闻: 'https://ethhub.substack.com/'
+- 商城: 'https://shop.ethhub.io'
+- 以太坊基础:
   - '以太坊是什么？': 'ethereum-basics/以太坊是什么.md'
   - '以太坊货币政策': 'ethereum-basics/以太坊货币政策.md'
-- Ethereum Roadmap:
-  - Ethereum 2.0:
+- 以太坊路线图:
+  - 以太坊 2.0:
       - '以太坊2.0各阶段': 'ethereum-roadmap/ethereum-2.0/以太坊2.0各阶段.md'
       - '以太坊权益证明': 'ethereum-roadmap/ethereum-2.0/以太坊权益证明.md'
       - '以太坊中的分片': 'ethereum-roadmap/ethereum-2.0/以太坊中的分片.md'
       - '以太坊2.0经济学': 'ethereum-roadmap/ethereum-2.0/以太坊2.0经济学.md'
       - '从以太坊1.0迁移到以太坊2.0': 'ethereum-roadmap/ethereum-2.0/从以太坊1.0迁移到以太坊2.0.md'
   - '以太坊1.x': 'ethereum-roadmap/以太坊1.x.md'
-  - Layer 2 Scaling:
+  - Layer 2 扩容方案:
       - 'ZK-Rollups': 'ethereum-roadmap/layer-2-scaling/zk-rollups.md'
       - 'Optimistic Rollups': 'ethereum-roadmap/layer-2-scaling/optimistic_rollups.md'
-- Using Ethereum:
+- 使用以太坊:
   - '如何购买ETH': 'using-ethereum/如何购买ETH.md'
   - '运行以太坊节点': 'using-ethereum/运行以太坊节点.md'
-  - Wallets:
+  - 钱包:
     - '介绍以太坊钱包': 'using-ethereum/wallets/介绍以太坊钱包.md'
     - '以太坊智能合约钱包': 'using-ethereum/wallets/以太坊智能合约钱包.md'
     - '以太坊硬件钱包': 'using-ethereum/wallets/以太坊硬件钱包.md'
