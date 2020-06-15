@@ -50,7 +50,7 @@ nav:
       - '以太坊中的分片': 'ethereum-roadmap/ethereum-2.0/以太坊中的分片.md'
       - '以太坊2.0经济学': 'ethereum-roadmap/ethereum-2.0/以太坊2.0经济学.md'
       - '从以太坊1.0迁移到以太坊2.0': 'ethereum-roadmap/ethereum-2.0/从以太坊1.0迁移到以太坊2.0.md'
-  - '概览': 'ethereum-roadmap/概览.md'
+  - '以太坊1.x': 'ethereum-roadmap/以太坊1.x.md'
   - Layer 2 Scaling:
       - 'ZK-Rollups': 'ethereum-roadmap/layer-2-scaling/zk-rollups.md'
       - 'Optimistic Rollups': 'ethereum-roadmap/layer-2-scaling/optimistic_rollups.md'
