@@ -1,0 +1,1715 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Ethereum 1.x目的在于针对当前的以太坊主网进行性能和存储优化">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-3.3.0">
+    
+    
+      
+        <title>Ethereum 1.x - EthHub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.63c76b3b.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.4637f1a4.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.962652e9.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125892125-2"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-125892125-2")</script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="ethhub" data-md-color-accent="">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#ethereum-1x" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="EthHub" class="md-header-nav__button md-logo">
+          
+            <img src="../../logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                EthHub
+              </span>
+              <span class="md-header-nav__topic">
+                以太坊1.x
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/ethhub-io/ethhub-zh/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      ethhub-io/ethhub-zh
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="首页" class="md-tabs__link">
+        首页
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../ethereum-basics/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%98%AF%E4%BB%80%E4%B9%88/" title="以太坊基础" class="md-tabs__link">
+          以太坊基础
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../ethereum-2.0/%E4%BB%A5%E5%A4%AA%E5%9D%8A2.0%E5%90%84%E9%98%B6%E6%AE%B5/" title="以太坊路线图" class="md-tabs__link">
+          以太坊路线图
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../using-ethereum/%E5%A6%82%E4%BD%95%E8%B4%AD%E4%B9%B0ETH/" title="使用以太坊" class="md-tabs__link">
+          使用以太坊
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="EthHub" class="md-nav__button md-logo">
+      
+        <img src="../../logo.png" width="48" height="48">
+      
+    </a>
+    EthHub
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/ethhub-io/ethhub-zh/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      ethhub-io/ethhub-zh
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="首页" class="md-nav__link">
+      首页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../ethereum-basics/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%98%AF%E4%BB%80%E4%B9%88/" title="文档" class="md-nav__link">
+      文档
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://podcast.ethhub.io" title="播客" class="md-nav__link">
+      播客
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://ethhub.substack.com/" title="新闻" class="md-nav__link">
+      新闻
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://shop.ethhub.io" title="商城" class="md-nav__link">
+      商城
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      以太坊基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        以太坊基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ethereum-basics/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%98%AF%E4%BB%80%E4%B9%88/" title="以太坊是什么？" class="md-nav__link">
+      以太坊是什么？
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ethereum-basics/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E8%B4%A7%E5%B8%81%E6%94%BF%E7%AD%96/" title="以太坊货币政策" class="md-nav__link">
+      以太坊货币政策
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+    
+    <label class="md-nav__link" for="nav-7">
+      以太坊路线图
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        以太坊路线图
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1" type="checkbox" id="nav-7-1">
+    
+    <label class="md-nav__link" for="nav-7-1">
+      以太坊 2.0
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-1">
+        以太坊 2.0
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ethereum-2.0/%E4%BB%A5%E5%A4%AA%E5%9D%8A2.0%E5%90%84%E9%98%B6%E6%AE%B5/" title="以太坊2.0各阶段" class="md-nav__link">
+      以太坊2.0各阶段
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ethereum-2.0/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%9D%83%E7%9B%8A%E8%AF%81%E6%98%8E/" title="以太坊权益证明" class="md-nav__link">
+      以太坊权益证明
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ethereum-2.0/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E4%B8%AD%E7%9A%84%E5%88%86%E7%89%87/" title="以太坊中的分片" class="md-nav__link">
+      以太坊中的分片
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ethereum-2.0/%E4%BB%A5%E5%A4%AA%E5%9D%8A2.0%E7%BB%8F%E6%B5%8E%E5%AD%A6/" title="以太坊2.0经济学" class="md-nav__link">
+      以太坊2.0经济学
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ethereum-2.0/%E4%BB%8E%E4%BB%A5%E5%A4%AA%E5%9D%8A1.0%E8%BF%81%E7%A7%BB%E5%88%B0%E4%BB%A5%E5%A4%AA%E5%9D%8A2.0/" title="从以太坊1.0迁移到以太坊2.0" class="md-nav__link">
+      从以太坊1.0迁移到以太坊2.0
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        以太坊1.x
+      </label>
+    
+    <a href="./" title="以太坊1.x" class="md-nav__link md-nav__link--active">
+      以太坊1.x
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="概览" class="md-nav__link">
+    概览
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1x" title="以太坊1.x前序历史" class="md-nav__link">
+    以太坊1.x前序历史
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#devcon-201710" title="第三届Devcon 2017年10月，坎昆" class="md-nav__link">
+    第三届Devcon 2017年10月，坎昆
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edcon-20185" title="EDCON 2018年5月，多伦多" class="md-nav__link">
+    EDCON 2018年5月，多伦多
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20186" title="2018年6月" class="md-nav__link">
+    2018年6月
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devcon-201810-11" title="第四届Devcon 2018年10月-11月，布拉格" class="md-nav__link">
+    第四届Devcon 2018年10月-11月，布拉格
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="主要目标" class="md-nav__link">
+    主要目标
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="工作方向" class="md-nav__link">
+    工作方向
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="状态租金" class="md-nav__link">
+    状态租金
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="提案框架" class="md-nav__link">
+    提案框架
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="常见问题" class="md-nav__link">
+    常见问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="既有提案" class="md-nav__link">
+    既有提案
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="固有挑战" class="md-nav__link">
+    固有挑战
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="合约种类及影响" class="md-nav__link">
+    合约种类及影响
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" title="相关资源" class="md-nav__link">
+    相关资源
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewasm" title="eWASM" class="md-nav__link">
+    eWASM
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="主要待解决问题" class="md-nav__link">
+    主要待解决问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gas" title="Gas计量" class="md-nav__link">
+    Gas计量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" title="内存配置" class="md-nav__link">
+    内存配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evm" title="与其他EVM状态的交互（例如合约存储、余额）" class="md-nav__link">
+    与其他EVM状态的交互（例如合约存储、余额）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" title="解释器/编译器保障" class="md-nav__link">
+    解释器/编译器保障
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" title="相关资源" class="md-nav__link">
+    相关资源
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" title="状态精简" class="md-nav__link">
+    状态精简
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" title="待解决问题：" class="md-nav__link">
+    待解决问题：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" title="删除历史信息面临的挑战" class="md-nav__link">
+    删除历史信息面临的挑战
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" title="保留已删除区块链部分的默克尔证明（或其他加密证明形式）" class="md-nav__link">
+    保留已删除区块链部分的默克尔证明（或其他加密证明形式）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" title="无限期维护头链" class="md-nav__link">
+    无限期维护头链
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" title="垃圾回收" class="md-nav__link">
+    垃圾回收
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" title="区块/收据存档" class="md-nav__link">
+    区块/收据存档
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" title="相关资源" class="md-nav__link">
+    相关资源
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" title="模拟仿真" class="md-nav__link">
+    模拟仿真
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" title="相关资源" class="md-nav__link">
+    相关资源
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" title="交付内容" class="md-nav__link">
+    交付内容
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" title="需要实行硬分叉的措施：" class="md-nav__link">
+    需要实行硬分叉的措施：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" title="可能无需实行硬分叉，但是需要在网络协议层面进行跨客户端协作的措施：" class="md-nav__link">
+    可能无需实行硬分叉，但是需要在网络协议层面进行跨客户端协作的措施：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" title="相关资源" class="md-nav__link">
+    相关资源
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-3" type="checkbox" id="nav-7-3">
+    
+    <label class="md-nav__link" for="nav-7-3">
+      Layer 2 扩容方案
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-3">
+        Layer 2 扩容方案
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../layer-2-scaling/zk-rollups/" title="ZK-Rollups" class="md-nav__link">
+      ZK-Rollups
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../layer-2-scaling/optimistic_rollups/" title="Optimistic Rollups" class="md-nav__link">
+      Optimistic Rollups
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      使用以太坊
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        使用以太坊
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using-ethereum/%E5%A6%82%E4%BD%95%E8%B4%AD%E4%B9%B0ETH/" title="如何购买ETH" class="md-nav__link">
+      如何购买ETH
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using-ethereum/%E8%BF%90%E8%A1%8C%E4%BB%A5%E5%A4%AA%E5%9D%8A%E8%8A%82%E7%82%B9/" title="运行以太坊节点" class="md-nav__link">
+      运行以太坊节点
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-3" type="checkbox" id="nav-8-3">
+    
+    <label class="md-nav__link" for="nav-8-3">
+      钱包
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-3">
+        钱包
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using-ethereum/wallets/%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%A4%AA%E5%9D%8A%E9%92%B1%E5%8C%85/" title="介绍以太坊钱包" class="md-nav__link">
+      介绍以太坊钱包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using-ethereum/wallets/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E9%92%B1%E5%8C%85/" title="以太坊智能合约钱包" class="md-nav__link">
+      以太坊智能合约钱包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using-ethereum/wallets/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A1%AC%E4%BB%B6%E9%92%B1%E5%8C%85/" title="以太坊硬件钱包" class="md-nav__link">
+      以太坊硬件钱包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using-ethereum/wallets/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%BB%E5%8A%A8%E9%92%B1%E5%8C%85/" title="以太坊移动钱包" class="md-nav__link">
+      以太坊移动钱包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using-ethereum/wallets/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%A1%8C%E9%9D%A2%E9%92%B1%E5%8C%85/" title="以太坊桌面钱包" class="md-nav__link">
+      以太坊桌面钱包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using-ethereum/wallets/web.md" title="以太坊网页钱包" class="md-nav__link">
+      以太坊网页钱包
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="概览" class="md-nav__link">
+    概览
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1x" title="以太坊1.x前序历史" class="md-nav__link">
+    以太坊1.x前序历史
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#devcon-201710" title="第三届Devcon 2017年10月，坎昆" class="md-nav__link">
+    第三届Devcon 2017年10月，坎昆
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edcon-20185" title="EDCON 2018年5月，多伦多" class="md-nav__link">
+    EDCON 2018年5月，多伦多
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20186" title="2018年6月" class="md-nav__link">
+    2018年6月
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devcon-201810-11" title="第四届Devcon 2018年10月-11月，布拉格" class="md-nav__link">
+    第四届Devcon 2018年10月-11月，布拉格
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="主要目标" class="md-nav__link">
+    主要目标
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="工作方向" class="md-nav__link">
+    工作方向
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="状态租金" class="md-nav__link">
+    状态租金
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="提案框架" class="md-nav__link">
+    提案框架
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="常见问题" class="md-nav__link">
+    常见问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="既有提案" class="md-nav__link">
+    既有提案
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="固有挑战" class="md-nav__link">
+    固有挑战
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="合约种类及影响" class="md-nav__link">
+    合约种类及影响
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" title="相关资源" class="md-nav__link">
+    相关资源
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewasm" title="eWASM" class="md-nav__link">
+    eWASM
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="主要待解决问题" class="md-nav__link">
+    主要待解决问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gas" title="Gas计量" class="md-nav__link">
+    Gas计量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" title="内存配置" class="md-nav__link">
+    内存配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evm" title="与其他EVM状态的交互（例如合约存储、余额）" class="md-nav__link">
+    与其他EVM状态的交互（例如合约存储、余额）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" title="解释器/编译器保障" class="md-nav__link">
+    解释器/编译器保障
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" title="相关资源" class="md-nav__link">
+    相关资源
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" title="状态精简" class="md-nav__link">
+    状态精简
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" title="待解决问题：" class="md-nav__link">
+    待解决问题：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" title="删除历史信息面临的挑战" class="md-nav__link">
+    删除历史信息面临的挑战
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" title="保留已删除区块链部分的默克尔证明（或其他加密证明形式）" class="md-nav__link">
+    保留已删除区块链部分的默克尔证明（或其他加密证明形式）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" title="无限期维护头链" class="md-nav__link">
+    无限期维护头链
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" title="垃圾回收" class="md-nav__link">
+    垃圾回收
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" title="区块/收据存档" class="md-nav__link">
+    区块/收据存档
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" title="相关资源" class="md-nav__link">
+    相关资源
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" title="模拟仿真" class="md-nav__link">
+    模拟仿真
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" title="相关资源" class="md-nav__link">
+    相关资源
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" title="交付内容" class="md-nav__link">
+    交付内容
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" title="需要实行硬分叉的措施：" class="md-nav__link">
+    需要实行硬分叉的措施：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" title="可能无需实行硬分叉，但是需要在网络协议层面进行跨客户端协作的措施：" class="md-nav__link">
+    可能无需实行硬分叉，但是需要在网络协议层面进行跨客户端协作的措施：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" title="相关资源" class="md-nav__link">
+    相关资源
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ethhub-io/ethhub-zh/edit/master/docs/ethereum-roadmap/以太坊1.x.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="ethereum-1x">Ethereum 1.x</h1>
+<h2 id="_1">概览</h2>
+<p>以太坊1.x是以太坊主网近期内将实行的一系列全面网络升级的代号。</p>
+<p>以太坊2.0（Serenity，即宁静）不会在2-3年内全面上线，但阶段0和阶段1会在1-2年内实现，阶段2可能会在2022年推出。以太坊2.0将作为一条全新且独立于ETH 1.0的区块链进行部署，因此并不会接替ETH 1.0链，这也就意味着ETH 1.0链将继续存在5-10年。</p>
+<p>Eth1.x概念的出现，要追溯到2018年的第四届开发者大会（Devcon IV）。当时许多以太坊核心开发者和好友在谈到以太坊面临的挑战时，不约而同地表达了一个类似的观点：随着网络性能的严重下降以及存储需求的不断攀升，如果以太坊主网不进行升级，那么很可能会变得难以持续。</p>
+<ul>
+<li>网络性能下降主要归因于状态（state）体积较大且还在不断增长。</li>
+<li>存储需求攀升主要是由于保留了区块、事件日志（收据）以及状态历史记录（当前可在主要客户端中删除）。</li>
+</ul>
+<p>1.x系列升级将为以太坊主网带来颠覆性的改变，而以太坊2.0（Serenity，即宁静）会同步进行原型设计和开发。1.x计划包含三个主要目标：(1) 通过提高每秒交易的吞吐量来提升主网扩容性（可通过优化客户端，大幅提升区块gas限制实现）；(2) 通过“存储租金”限制和减少磁盘空间需求，从而确保全节点的可持续运行；(3) 通过优化虚拟机 (VM) 提升开发者体验，其中包括eWASM的实现。</p>
+<h2 id="1x">以太坊1.x前序历史</h2>
+<h4 id="devcon-201710">第三届Devcon 2017年10月，坎昆</h4>
+<p>Vitalik Buterin提出 <a href="https://www.youtube.com/watch?v=hAhUfCjjkXc">"针对以太坊2.0的谨慎建议"</a>, 建议以太坊1.0的第1层（layer 1）应保持“安全且保守”，大部分创新都应在第2层和分片上施行。</p>
+<h4 id="edcon-20185">EDCON 2018年5月，多伦多</h4>
+<p>Vitalik Buterin发表演讲“ <a href="https://www.youtube.com/watch?v=VqOlOMAqC08">想成为Casper验证者吗</a>”，表示Casper FFG验证者可以在笔记本电脑中运行，并且临近推行。</p>
+<h4 id="20186">2018年6月</h4>
+<p>在<a href="https://youtu.be/8-AZys80RrU?t=1819">第40次核心开发者会议</a>中，由于将Casper FFG作为合约实现具有一定挑战性，且与分片相关研究大量重叠，Casper FFG与分片研究进行了合并。</p>
+<h4 id="devcon-201810-11">第四届Devcon 2018年10月-11月，布拉格</h4>
+<p>明确Serenity（完整的Casper+分片）在3-5年内不会在功能上取代以太坊1.0。</p>
+<h2 id="_2">主要目标</h2>
+<ul>
+<li>开发、规范并实现一系列措施，使其在两年内可以部署在以太坊1.0主网上，以确保1.0链持续存在且可用。主要包括抑制状态增长或是限制状态大小。</li>
+<li>重点放在这些措施本身，而不再强调引入特定的“功能”。而这就是我们需要eWASM的原因之一。目前的计算预编译功能需要逐例处理。引入eWASM将首先启用“预编译”工厂，引入预编译的速度和数量都得到了提升。之后，任何合约都将能够在eWASM中进行编写，从而完全不需要进行预编译。</li>
+</ul>
+<h2 id="_3">工作方向</h2>
+<ul>
+<li>状态租金（鉴于可能不只是租金，目前称作状态费用）</li>
+<li>eWASM</li>
+<li>状态精简</li>
+<li>模拟仿真</li>
+</ul>
+<h3 id="_4">状态租金</h3>
+<h4 id="_5">提案框架</h4>
+<p>由于状态租金与以太坊1.x阶段内的其他变动相比，可能会带来更大的影响（所以状态租金备受争议，甚至不受欢迎），因此在设计、对比并评估相关提案时要保持清晰的逻辑框架。这个框架旨在尽可能保证最终的更改方案是最优的。其遵循从“要解决的问题是什么（如果保持现状会怎样）”到“我们具体应该怎么应对”的逻辑路径。<a href="https://github.com/ledgerwatch/eth_state/blob/master/State_size_growth_management.pdf">此处是目前的提案框架文档</a>（进行中）。</p>
+<p>Alexey对于状态租金的概念作出了如下解释：“（状态租金）并不是开始存储时一次性向用户收取费用，然后在其释放所占用的存储空间时退还一定金额，而是根据用户所占用的存储按天或按区块收取费用，如果他们不再需要进行存储了，可以提出ETH或是置之不顾，若是后者，其ETH将被回收。”</p>
+<h4 id="_6">常见问题</h4>
+<ul>
+<li>为什么将状态看作是宝贵资源？于谁而言有价值？（其价值能被复制吗）</li>
+<li>为什么要限制状态大小？（提升系统性能 + 可能有一定程度的缓解作用）</li>
+<li>如何管理状态大小？（前馈 vs. 反馈控制）</li>
+<li>需要管理哪些指标？（状态大小、状态增长或是两者同时）</li>
+<li>指标本身有无状态？</li>
+<li>我们使用什么参数（控制输入）？（状态扩张的成本，按每个区块每个大小单位收费）</li>
+<li>受控系统能削弱或是逃避控制吗？（潜在租金，矿工返利）</li>
+<li>我们如何获得占用大量存储的有效合约来支付租金，而租金更准确地代表了一段时间内将数据永久存储在链上的成本？ （线性跨合约存储可能是一种解决方案）</li>
+<li>如何清理废弃合约中不再使用的状态？（由于废弃合约仅占状态的6%，因此还没有提案讨论过这个问题）</li>
+<li>如何在协议层面上保持简单且效用最大化的费用，并完全删除耗费大量费用的信息？（这不是一个好主意，用户总是会遗忘自己参与其中的应用）</li>
+<li>能否将智能合约的某些数据移至链下？（这种做法需要一个子协议）</li>
+</ul>
+<p><em>“假如你现在有一个占用存储的智能合约，且必须要有人为其支付费用，那如果没有人进行支付又会怎么样？”</em></p>
+<p>在目前既有的三个提案中，当智能合约的余额与状态费用是相互独立的，如果合约的两个余额都消耗完毕，那么会发生驱逐情况。 <br/>
+在现有的提案中，合约驱逐不会自动进行，必须要有人“戳”一下合约。简单来说，必须有人创建一个交易，并以某种方式访问该合约。</p>
+<p>对于非合约来说，驱逐就只是意味着从状态中移除，因为其中并不包含任何信息。而合约不同，合约会占用存储，因此合约的驱逐不能直接从状态中完全移除，而是会产生一个“存根”(stub)，其本质上是保留驱逐前合约的整个状态。存根带来的一个影响是，不能将合约在状态中完全删除，因此仍然会处于悬挂状态，但是存根使得我们能够恢复合约。</p>
+<p>我们举个<strong>例子</strong>，“假如你有一个多签钱包，里面有许多代币，但是你忘记支付存储费用，你的钱包就会“消失”，但你仍然可以通过恢复机制另起一个合约来重建合约存储。只需要借助一个简单的代码将其从存根中恢复，你的合约就能“死而复生”。另外，你也可以直接充值状态费用从而继续使用合约，或者你也可以将合约中的数据移至别处。” <br/>
+存根将是一串32字节的哈希值，保留了合约被驱逐之前的内容。</p>
+<p><em>与无状态合约有何区别？</em></p>
+<p>区别在于，无状态合约即使以存根形式存在，仍然可以通过正常操作进行访问。而在状态费用提案中，当合约处于休眠状态（即以存根形式存在），我们无法对其进行访问。如此可以说合约在以太坊虚拟机（<a href="https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-%28EVM%29-Awesome-List">EVM</a>）中是不可见的，只有恢复合约的特殊操作码才能辨识出存根。</p>
+<p><em>这是否是最好的解决方案？</em></p>
+<p>假使有很多小型合约只保留了哈希存根，但状态大小仍然高居不下，那么我们就可以说这并不是完美的解决方案。 </p>
+<p>点击<a href="https://epicenter.tv/episode/274/">此处</a>观看Alexey解释状态费用及Eth1.x的完整视频。</p>
+<h4 id="_7">既有提案</h4>
+<p>目前针对状态费用存在三个提案： <br/> 
+* 对所有账户引进费用机制，无论是合约账户或是非合约账户，既有账户或是新建账户，且都能够恢复被驱逐的合约。<a href="https://github.com/ledgerwatch/eth_state/blob/master/State_rent.pdf">当前提案</a>
+* 在状态扩展时（创建账户，增加存储项目）进行费用锁定，在状态清除后及释放一定金额。只针对先前存在的状态进行收费。<a href="https://github.com/ledgerwatch/eth_state/blob/master/State_Rent_2.pdf">当前提案</a>
+* 在“短期”内提升状态扩张的成本，以便在实现状态费用之前提高区块gas上限。</p>
+<h4 id="_8">固有挑战</h4>
+<ul>
+<li>现有的dApp将受到什么影响？是否会由于太过昂贵/繁琐而无法使用？是否需要优化/完全重写？</li>
+<li>状态额外扩张的费用或租金的定价──应该gas还是ETH来定价？如何确定价格？（状态规模的反馈周期？） ETH价格的波动会对费用产生多大影响？矿工会帮助用户逃避费用吗？</li>
+</ul>
+<h4 id="_9">合约种类及影响</h4>
+<p>部分状态费用研究的目的在于识别哪些合约种类易受协议变更的影响，并且为其提供解决方案。可能受影响的重要合约种类：</p>
+<ul>
+<li>ERC20代币合约及其管理合约（DAI、Augur）</li>
+<li>链上买卖合约（DEXs）</li>
+<li>以太坊域名服务 <a href="https://ens.domains/">ENS</a></li>
+<li>非同质代币（NFT）合约</li>
+<li>多签钱包</li>
+<li>游戏合约</li>
+<li>博彩合约</li>
+</ul>
+<h4 id="_10">相关资源</h4>
+<ul>
+<li><a href="https://ethereum-magicians.org/t/state-rent-proposal-version-2-rushed/2494">状态费用提案</a></li>
+<li><a href="https://epicenter.tv/episode/274/">Alexey对状态费用的阐释</a></li>
+</ul>
+<h3 id="ewasm">eWASM</h3>
+<p>由于当前的以太坊虚拟机（<a href="https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-%28EVM%29-Awesome-List">EVM</a>）架构缺乏灵活性，对以太坊协议的强化有一定限制性。扩展执行层的方法是引入特殊的“预编译”合约。通过使用WebAssembly作为虚拟机规范，以执行高性能的“预编译”合约，有望简化引入此类合约的过程。</p>
+<p>eWASM作为Wasm的衍生，可以通过在部署时对合约进行验证来克服Wasm的一些非确定性功能。如果合约使用了非确定性功能，则会被拒绝。</p>
+<p>当前的提案建议使用更为狭义的eWASM（仅允许将预编译编写为eWASM）。</p>
+<h4 id="_11">主要待解决问题</h4>
+<ul>
+<li>Gas计量</li>
+<li>内存配置</li>
+<li>内存配置</li>
+<li>解释器/编译器如何保障编译时及运行时</li>
+</ul>
+<h4 id="gas">Gas计量</h4>
+<p>两种主要方式：</p>
+<ul>
+<li>注入。预处理Wasm字节码，额外添加一个寄存器用以gas计量。在进行某些操作时（跳转、调用）递增，并检查gas是否耗尽。优点：通用性；缺点：性能开销。</li>
+<li>自动估算上限。对字节码执行静态分析，对于某些代码子集，可以计算已执行指令（虚拟gas）的上限。优点：无性能开销；缺点：仅适用于代码子集。</li>
+</ul>
+<p>目前第一阶段（预编译）采用的方式是基于gas上限。</p>
+<h4 id="_12">内存配置</h4>
+<p>Wasm语义决定了其执行具有线性内存（在当前规范版本中只有一个），可以按需增长。线性内存是否会在每次调用引擎时进行分配，然后在执行结束时回收？如果是这样的话，则与当前的EVM模型相比（每个CALL操作码都会进行分配和回收），效率更高。</p>
+<h4 id="evm">与其他EVM状态的交互（例如合约存储、余额）</h4>
+<p>这是通过外部函数提出的，例如（函数名为虚构）：</p>
+<p><code>function_SLOAD(storage_index: uint256)</code></p>
+<p>另一种方式是不允许eWASM代码访问EVM状态，而仅在调用时交换输入/输出。当然，这并不适合维护大型的持久数据结构。</p>
+<h4 id="_13">解释器/编译器保障</h4>
+<p>起初，这个问题是在JITs（Just In Time，即时编译）编译器语境中被提及的。JIT编译器是WebAssembly大大提升了JavaScript性能的原因之一。</p>
+<p>在对抗性环境中，JIT编译器可能会出现问题，因为经常会出现编译耗时异常之久的程序，而且决定哪些内容要“即时编译”的算法也可能被攻击。</p>
+<p>AOT（Ahead of Time，预先编译）编译器能够用于由核心开发者控制的预编译（阶段1）。阶段2的计划是首先使用简单解释器，继而开发AOT编译器，以提供必要保障。之所以首先引入解释器的原因是要确保eWASM可使用，使参与者更有动力围绕编译器展开工作（这比解释器更难）。</p>
+<h4 id="_14">相关资源</h4>
+<p><a href="https://ethereum-magicians.org/t/eWASM-working-group-proposal-for-eth-1-x/2033">eWASM提案</a> <br/>
+<a href="https://github.com/eWASM/design">eWASM设计</a></p>
+<h3 id="_15">状态精简</h3>
+<p>以太坊1.0存在扩容问题。增长率本身隐隐受到区块gas上限的限制，但数据的累积总量不受限制。 <br/>
+状态精简也称为链精简，这项工作并不直接与状态本身相关联，而是限制日志、区块以及数据等信息的增长。 <br/>
+按照核心团队的说法：“如果以太坊按照目前的速度增长，那么每年将增加91 GB的存储量"。 <br/>
+精简存储是有必要的，目的是限制以太坊的数据存储增长。提议的一部分包括删除历史区块、日志和索引。 </p>
+<h4 id="_16">待解决问题：</h4>
+<ul>
+<li>我们必须要保留哪些部分才能与以太坊协议保持一致？</li>
+<li>是否需要一直保留所有区块？（也许不需要，例如我们可以采取向后同步方式）</li>
+<li>是否需要保留收据或是日志？保留的话需要保存多少（多少GB）？保存多久？</li>
+<li>是否总是需要下载整个头链？是否可以进行压缩（或许可以使用STARK证明）？</li>
+<li>能否通过优化快照同步流程（快速同步、压缩同步）防止无效的状态转换（或许可以使用有效证明）？</li>
+</ul>
+<h4 id="_17">删除历史信息面临的挑战</h4>
+<p>对历史区块链进行精简所要面临的第一个挑战就是，即使我们删除了历史信息，也要依然能够对其进行证明。以下是两种潜在解决方案：</p>
+<h5 id="_18">保留已删除区块链部分的默克尔证明（或其他加密证明形式）</h5>
+<p>轻客户端就是以这种方式运行，因此我们能够在短短几分钟内完成同步。轻客户端无需遍历从创世区块到链头的每个区块头，而是通过一个可靠检查点进行硬编码（或是从配置文件中获取），并从该检查点开始同步。然而，这种机制也存在两个问题：</p>
+<ul>
+<li>为了保证快速同步，必须不断更新硬编码快照或配置文件。这种方式适用于主网，因其会进行常规维护，但并不适用于私有以太坊网络。</li>
+<li>如果没有新版本发布，同步所耗费的时间会越来越长。而且如果全节点开始自行删除历史链头，那么历史检查点将失去效用，这迫使开发者要不断发布新版本，而用户也要不断拉取新版本。这对于扩容性来说毫无帮助。</li>
+</ul>
+<h5 id="_19">无限期维护头链</h5>
+<p>这解决了Merkle证明机制的所有问题，我们始终可以仅基于头链和创世区块就进行快速同步。其弊端在于，与默尔克证明相反（默克尔证明是32个字节的任意历史记录），使得区块头无限期可用也就意味着头链的无限增长。</p>
+<h4 id="_20">垃圾回收</h4>
+<p>如果我们就N个月/区块的保留策略达成一致，那么当区块链增长时，每个客户端都会删除N区块头之前的区块体和收据。然而这也会对RPC API造成影响。对此我们需要引入“虚拟创世块”（或许有更好的名字）概念，以定义APIs停止返回数据（或返回其停止维护数据）的历史点。</p>
+<h4 id="_21">区块/收据存档</h4>
+<p>如何对历史链部分进行存档以便在之后的重建中可以重新启用，这是提案中最具挑战性的部分。因此，我们需要考虑在何处放置这些存档（内部或外部）：</p>
+<ul>
+<li>协议外存储意味着将数据文件托管在传统外部服务器中，并根据我们的安全需求进行镜像和复制：FTP、S3、CDN等等。这些文件可以由主要参与者进行存档（以太坊基金会、Consensys、Parity Technologies、Internet Archive等等）。可以将这些文件的访问方式简化为Web请求。</li>
+<li>协议内存储意味着将数据文件托管在以太坊网络内部的某些节点处：Swarm/devp2p、IPFS/libp2p、BitTorrent等。存档仍将由主要参与者运行，但任何人都有机会参与运行存档，因此这种方式更贴近去中心化的精神。</li>
+</ul>
+<p>以太坊秉承着去中心化的精神，我们只会选择协议内的方案。但其实还有许多其他方式使得我们可以对存档进行去中心化存储。</p>
+<ul>
+<li><a href="https://swarm.ethereum.org/">Swarm</a> （暂未投入使用）</li>
+<li><a href="https://ipfs.io/">IPFS</a> （易于访问，难于托管）</li>
+<li><a href="https://www.bittorrent.com/">BitTorrent</a></li>
+<li>LES/PIP</li>
+</ul>
+<p><strong>打破惯例</strong></p>
+<p>精简历史链会打破以太坊生态内部的一些重要惯例：</p>
+<ul>
+<li>DApps将不能再访问保留期限外的事件</li>
+<li>节点将无法获知交易是否已删除或者是否从一开始就不存在</li>
+<li>节点会更难进行完整同步，目前在以太坊主网上使用Geth进行完整同步大约需要5天，其中最后270万个区块需要4天。如果我们将交易吞吐量提高到10倍，那么除了特殊用户之外，将没有人能够完成完整同步，也不会有人愿意进行完整同步。</li>
+</ul>
+<h4 id="_22">相关资源</h4>
+<p><a href="https://gist.github.com/karalabe/60be7bef184c8ec286fc7ee2b35b0b5b">精简提案</a></p>
+<h3 id="_23">模拟仿真</h3>
+<p>要对以上提及的工作领域（状态费用、状态精简）进行支持、运行测试方案并且对我们将来可能面临的难题进行预测，我们能够借助哪些工具？</p>
+<p>模拟仿真能够为其他工作方向提供数据，以便进行预测、基准测试和参数校准。</p>
+<p>模拟仿真工作有三项开发任务：
+* 模拟框架，当输入数据集时，该框架将生成输出，以预估被提议更新的属性（例如叔块率降低和gas上限增长）。目前建议使用<a href="https://github.com/ConsenSys/wittgenstein">Wittgenstein</a>模拟器
+* 仿真框架，可以更改环境条件，以测试已启用更新的属性
+* 测试网，能够同一网络上一并启用这些更新</p>
+<p><strong>模拟</strong>工作负责处理软件代理的模型（当前语境为以太坊客户端软件实例），模型需要做到能够良好运行、能够捕获代理的重要方面。 <br/></p>
+<p><strong>仿真</strong>工作主要负责处理实际的软件代理（当前语境为实际的以太坊客户端实现，例如geth和parity），将其置于虚拟环境中，可以自由更改虚拟机以及网络参数。</p>
+<p>通过模拟或许可以得到解答的问题：</p>
+<ul>
+<li>如果大多数以太坊节点在验证工作量证明之后直接广播区块（而不是像之前一样对区块进行完整处理），叔块率是否不再能代表网络的拥堵情况？</li>
+</ul>
+<p>通过仿真或许可以得到解答的问题：</p>
+<ul>
+<li>快照同步（快速同步、压缩同步）成功率与主要带宽和状态历史精简阈值这类事物之间的关系应该用哪个函数进行描述？</li>
+</ul>
+<p>开发者正在收集用于仿真的数据集，并对用于仿真的参数进行最终确定（其中之一可能是叔块率）。</p>
+<p><strong>需测试的属性</strong></p>
+<ul>
+<li>区块广播，能否降低叔块率</li>
+<li>如果可以，提升区块gas上限</li>
+<li>如果可以，考虑提高存储成本和计算成本</li>
+<li>确定下一个瓶颈是什么
+ (a) 假设计算时间缩短
+ (b) 假设由于带宽限制出现许多叔块</li>
+</ul>
+<p><strong>准备数据集</strong></p>
+<p><a href="https://drive.google.com/drive/folders/1cJRMKxhGBzXMxNBcPi011Mg5e2Dw1JU1">这里</a>从多种来源收集数据集，例如<a href="https://whiteblock.io/">WhiteBlock</a>, <a href="https://etherscan.io/">Etherscan</a>等等。</p>
+<h4 id="_24">相关资源</h4>
+<p><a href="https://docs.google.com/document/d/1pIW6Uac5Qanx_L5Y_G4Ucrx_gjITkBgzQKmlBQbW3Cg/edit">模拟提案</a></p>
+<h2 id="_25">交付内容</h2>
+<h4 id="_26">需要实行硬分叉的措施：</h4>
+<ul>
+<li>状态费用（或限制状态增长）</li>
+<li>eWASM</li>
+</ul>
+<h4 id="_27">可能无需实行硬分叉，但是需要在网络协议层面进行跨客户端协作的措施：</h4>
+<ul>
+<li>状态精简</li>
+</ul>
+<h2 id="_28">相关资源</h2>
+<ul>
+<li><a href="https://ledgerwatch.github.io/Ethereum_1x_Definition_part_1">Ethereum 1x Definition (part 1)</a></li>
+<li><a href="https://ledgerwatch.github.io/Ethereum_1x_Definition_part_2">Ethereum 1x Definition (part 2)</a></li>
+<li><a href="https://ledgerwatch.github.io/Ethereum_1x_Definition_part_3">Ethereum 1x Definition (part 3)</a></li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../ethereum-2.0/%E4%BB%8E%E4%BB%A5%E5%A4%AA%E5%9D%8A1.0%E8%BF%81%E7%A7%BB%E5%88%B0%E4%BB%A5%E5%A4%AA%E5%9D%8A2.0/" title="从以太坊1.0迁移到以太坊2.0" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                从以太坊1.0迁移到以太坊2.0
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../layer-2-scaling/zk-rollups/" title="ZK-Rollups" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                ZK-Rollups
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        <a href="https://etherscan.io/address/0xa19fcdad77c1f0fd184689aca88babcf68010347">Donate: 0xA19FCDaD77C1F0fd184689aca88BabCF68010347</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/ethhub-io/ethhub" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/ethhub_io" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://medium.com/ethhub" class="md-footer-social__link fa fa-medium"></a>
+    
+      <a href="https://discordapp.com/invite/gw8AM98" class="md-footer-social__link fa fa-comment"></a>
+    
+      <a href="https://www.instagram.com/ethhub_io/" class="md-footer-social__link fa fa-instagram"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.3a8f445d.js"></script>
+      
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
