@@ -36,7 +36,7 @@ google_analytics:
 
 nav:
 - 首页: 'index.md'
-- 文档: 'ethereum-basics/what-is-ethereum.md'
+- 文档: 'ethereum-basics/以太坊是什么.md'
 - 播客: 'https://podcast.ethhub.io'
 - 新闻: 'https://ethhub.substack.com/'
 - 商城: 'https://shop.ethhub.io'
